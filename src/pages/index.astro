@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Home" description="Placeholder hero copy for the upcoming author site.">
+  <section class="container hero">
+    <div>
+      <p class="eyebrow">Author • Engineer • Speaker</p>
+      <h1>Placeholder headline for Gayathri Mohan’s author platform.</h1>
+      <p>
+        This is a temporary hero message. It will be replaced with a short positioning statement
+        that introduces the book, speaking, and consulting work.
+      </p>
+      <div class="cta-row">
+        <a class="button primary" href={Astro.resolve("/book")}>Primary CTA</a>
+        <a class="button secondary" href={Astro.resolve("/contact")}>Secondary CTA</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Highlights to replace later</h2>
+      <ul>
+        <li>Placeholder highlight #1 that captures a key theme.</li>
+        <li>Placeholder highlight #2 describing impact or expertise.</li>
+        <li>Placeholder highlight #3 for a book or speaking focus.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

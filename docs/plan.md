@@ -16,19 +16,22 @@ Planned pages (static):
 
 ## Phased implementation plan
 
-### Phase 1 — Project setup (Astro + content structure)
+### Phase 1 — Project setup (Astro + content structure) ✅ Completed
 1. **Initialize Astro project**
    - Astro + MDX
    - Configure `site` and `base` for GitHub Pages
 2. **Design system foundations**
-   - Global styles (typography, spacing, color tokens)
+   - Global styles + Tailwind setup
    - Base layout (header/footer/nav)
 3. **Content collections**
    - `talks`, `writing`, `press` (optional), `testimonials` (optional)
 4. **Add placeholder content**
    - Use a documented placeholder list (see `docs/placeholders.md`)
+5. **Tooling**
+   - GitHub Pages workflow (prod + PR preview)
+   - Tailwind + shadcn/ui foundations
 
-### Phase 2 — Core pages (static content + CTAs)
+### Phase 2 — Core pages (static content + CTAs) ⏳ Next
 1. **Home**
    - Hero + CTA(s)
    - Book promo section
@@ -51,7 +54,7 @@ Planned pages (static):
 7. **Contact**
    - Email + social links (possibly a lightweight form)
 
-### Phase 3 — Content polish & SEO
+### Phase 3 — Content polish & SEO ⏳ Upcoming
 1. **Metadata**
    - OpenGraph/Twitter cards
    - Page titles + descriptions
@@ -60,7 +63,7 @@ Planned pages (static):
 3. **Performance**
    - Image optimization, lazy loading
 
-### Phase 4 — Deployment
+### Phase 4 — Deployment ⏳ Upcoming
 1. **GitHub Pages build**
 2. **Custom domain (optional)**
 3. **Analytics (optional)**
@@ -75,7 +78,8 @@ Use `docs/placeholders.md` to collect final content for:
 - Social links + contact email
 - Testimonials / endorsements (optional)
 
-## Open questions
+## Open questions / inputs needed
 - Confirm tone (serious/academic vs. friendly/practical)
 - Confirm brand colors / typography preferences
 - Confirm which sections are most important on the homepage
+- Confirm if we should prioritize book sales or speaking leads first

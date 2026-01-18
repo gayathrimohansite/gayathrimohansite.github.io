@@ -6,9 +6,7 @@ interface Props {
 
 const { title = "Gayathri Mohan", description = "Author, engineer, and speaker." } = Astro.props;
 const pageTitle = `${title} | Gayathri Mohan`;
-const base = Astro.base && Astro.base !== "/" ? Astro.base : "";
-const withBase = (path: string) => `${base}${path}`;
-
+import { withBase } from "../lib/base";
 import "../styles/global.css";
 ---
 <!doctype html>

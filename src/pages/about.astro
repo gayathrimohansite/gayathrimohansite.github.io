@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const base = Astro.base && Astro.base !== "/" ? Astro.base : "";
-const withBase = (path: string) => `${base}${path}`;
+import { withBase } from "../lib/base";
 ---
 
 <BaseLayout title="About" description="About Gayathri Mohan, technology executive and author.">

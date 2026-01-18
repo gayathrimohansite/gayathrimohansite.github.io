@@ -68,7 +68,7 @@ a {
 }
 
 a:hover,
-+a:focus {
+a:focus {
   color: hsl(var(--primary));
 }
 
@@ -228,6 +228,10 @@ a:hover,
   color: hsl(var(--muted-foreground));
 }
 
+.card .button {
+  margin-top: 1rem;
+}
+
 .muted {
   color: hsl(var(--muted-foreground));
 }
@@ -241,6 +245,44 @@ a:hover,
 .section ul {
   margin: 0;
   padding-left: 1.25rem;
+}
+
+.highlights-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.highlight-card {
+  border-radius: 20px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 16px 32px -28px hsl(var(--foreground) / 0.2);
+}
+
+.highlight-card p {
+  margin: 0;
+  color: hsl(var(--muted-foreground));
+}
+
+.highlight-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--secondary));
+  color: hsl(var(--primary));
+}
+
+.highlight-icon__svg {
+  width: 28px;
+  height: 28px;
 }
 
 @media (max-width: 720px) {

@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const talks = await getCollection("talks");
+---
+
+<BaseLayout title="Speaking" description="Speaking engagements and training led by Gayathri Mohan.">
+  <section class="container hero">
+    <p class="eyebrow">Speaking &amp; Training</p>
+    <h1>Executive keynotes and hands-on training for modern testing leaders.</h1>
+    <p>
+      Gayathri speaks internationally on AI-enabled quality engineering, enterprise testing strategy,
+      and large-scale transformation. Sessions range from executive briefings to deep technical
+      workshops.
+    </p>
+    <div class="cta-row">
+      <a class="button primary" href="mailto:gayathrimohan88@gmail.com">Request availability</a>
+      <a class="button secondary" href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/" rel="noreferrer">
+        View O'Reilly training
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-grid">
+      <div>
+        <h2>Signature topics</h2>
+        <ul>
+          <li>AI-enabled quality engineering and GenAI adoption in testing.</li>
+          <li>Evolutionary Testing Strategy for enterprise-scale delivery.</li>
+          <li>Future-ready test automation across AR/VR, Blockchain, and IoT.</li>
+          <li>Executive readiness for quality transformation and governance.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Featured training</h3>
+        <p>
+          <strong>Generative AI for Software Testing</strong> — a live, practical workshop for
+          quality engineers and leaders looking to apply AI in automation and strategy.
+        </p>
+        <a
+          class="button secondary"
+          href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/"
+          rel="noreferrer"
+        >
+          See the O'Reilly listing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Recent sessions</h2>
+      <div class="section-grid">
+        {talks.map((talk) => (
+          <article class="card">
+            <h3>{talk.data.title}</h3>
+            <p class="muted">{talk.data.event} {talk.data.date ? `• ${talk.data.date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}` : ""}</p>
+            <p>{talk.data.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

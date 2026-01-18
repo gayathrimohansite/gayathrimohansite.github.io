@@ -25,6 +25,7 @@ const press = defineCollection({
   schema: z.object({
     title: z.string(),
     outlet: z.string().optional(),
+    description: z.string().optional(),
     link: z.string().url().optional(),
   }),
 });

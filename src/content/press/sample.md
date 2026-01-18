@@ -1,6 +1,7 @@
 ---
-title: "Sample press mention"
-outlet: "Placeholder Outlet"
-link: "https://example.com"
+title: "ThoughtWorks: Full Stack Testing book feature"
+outlet: "ThoughtWorks Insights"
+description: "ThoughtWorks highlights the impact and positioning of Full Stack Testing for modern quality engineering teams."
+link: "https://www.thoughtworks.com/en-de/insights/books/full-stack-testing"
 ---
-A short placeholder body for this press entry.
+ThoughtWorks highlights the impact and positioning of Full Stack Testing for modern quality engineering teams.

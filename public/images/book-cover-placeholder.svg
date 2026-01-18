@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="520" viewBox="0 0 360 520" role="img" aria-labelledby="title desc">
+  <title id="title">Book cover placeholder</title>
+  <desc id="desc">Placeholder cover for Full Stack Testing.</desc>
+  <rect width="360" height="520" rx="28" fill="#1e3a8a" />
+  <rect x="24" y="24" width="312" height="472" rx="22" fill="#2563eb" />
+  <text x="50%" y="40%" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#f8fafc">Full Stack Testing</text>
+  <text x="50%" y="52%" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#e2e8f0">O'Reilly</text>
+  <text x="50%" y="80%" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e2e8f0">Book cover placeholder</text>
+</svg>

@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = Astro.base && Astro.base !== "/" ? Astro.base : "";
+const withBase = (path: string) => `${base}${path}`;
+---
+
+<BaseLayout title="About" description="About Gayathri Mohan, technology executive and author.">
+  <section class="container hero hero-grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h1>Building AI-driven quality engineering programs with global impact.</h1>
+      <p>
+        Technology executive specializing in AI-driven Quality Engineering and large-scale delivery
+        transformation, with a track record of building global capabilities, shaping market-leading
+        strategies, and translating innovation into commercial outcomes.
+      </p>
+      <div class="cta-row">
+        <a class="button primary" href={withBase("/speaking")}>Invite Gayathri to speak</a>
+        <a class="button secondary" href={withBase("/contact")}>Contact</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src={withBase("/images/gayathri-mohan-headshot.svg")} alt="Portrait of Gayathri Mohan" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-grid">
+      <div>
+        <h2>Thought leadership &amp; industry impact</h2>
+        <ul>
+          <li>
+            Author of O'Reilly's <em>Full Stack Testing</em>, covering end-to-end test automation,
+            CI/CD integration, and AI-driven quality engineering.
+          </li>
+          <li>
+            Co-author of <em>Perspectives of Agile Software Testing</em>, contributing expertise on
+            mobile automation and continuous testing in DevOps pipelines.
+          </li>
+          <li>
+            Featured in podcasts and enterprise webinars shaping executive conversations on quality
+            strategy and modern testing.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>Global influence &amp; recognition</h2>
+        <ul>
+          <li>
+            International conference speaker at Øredev, SeleniumConf, Test Istanbul, Agile Testing
+            Alliance, and Test Tribe.
+          </li>
+          <li>
+            Recognized among “100 Women in Tech to Follow and Learn From” by Agile Testing Days.
+          </li>
+          <li>
+            Active contributor to open knowledge sharing through blogs, frameworks, and community-led
+            initiatives.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Innovation &amp; strategic frameworks</h2>
+      <div class="section-grid">
+        <div class="card">
+          <h3>Evolutionary Testing Strategy</h3>
+          <p>
+            A best-practice framework for designing scalable, future-ready enterprise testing
+            architectures that evolve with business needs.
+          </p>
+        </div>
+        <div class="card">
+          <h3>IoT Testing Atlas</h3>
+          <p>
+            A comprehensive testing framework for complex IoT ecosystems, focused on reliability,
+            security, performance, and scalability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

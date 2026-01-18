@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = Astro.base && Astro.base !== "/" ? Astro.base : "";
+const withBase = (path: string) => `${base}${path}`;
+---
+
+<BaseLayout title="Book" description="Full Stack Testing by Gayathri Mohan.">
+  <section class="container hero hero-grid">
+    <div>
+      <p class="eyebrow">Book</p>
+      <h1>Full Stack Testing (O'Reilly)</h1>
+      <p>
+        A definitive industry reference on modern AI-driven quality engineering, covering end-to-end
+        automation across functional and non-functional domains, CI/CD integration, and testing
+        strategies for emerging technologies including AR/VR, Blockchain, and IoT.
+      </p>
+      <div class="cta-row">
+        <a
+          class="button primary"
+          href="https://www.oreilly.com/library/view/full-stack-testing/9781098108120/colophon01.html"
+          rel="noreferrer"
+        >
+          View on O'Reilly
+        </a>
+        <a
+          class="button secondary"
+          href="https://www.thoughtworks.com/en-de/insights/books/full-stack-testing"
+          rel="noreferrer"
+        >
+          ThoughtWorks feature
+        </a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src={withBase("/images/full-stack-testing-cover.svg")} alt="Full Stack Testing book cover" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-grid">
+      <div>
+        <h2>Why it matters</h2>
+        <ul>
+          <li>Brings functional, non-functional, and emerging tech testing disciplines into one playbook.</li>
+          <li>Guides leaders on building AI-enabled quality engineering capabilities.</li>
+          <li>Maps automation strategy across the full delivery lifecycle, from design to production.</li>
+        </ul>
+      </div>
+      <blockquote class="card">
+        <p>
+          “This is the first attempt I have seen to bring all the various software testing disciplines
+          together in a single publication… this is a book I would gladly add to my IT reference
+          library.”
+        </p>
+        <p class="muted">— Ian Molyneaux, author of O'Reilly's “The Art of Application Performance Testing”</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Use the book as a springboard</h2>
+      <p class="muted">
+        Pair the book with executive workshops, leadership coaching, and training for teams adopting
+        AI-driven quality engineering.
+      </p>
+      <a class="button primary" href={withBase("/contact")}>Discuss workshops</a>
+    </div>
+  </section>
+</BaseLayout>

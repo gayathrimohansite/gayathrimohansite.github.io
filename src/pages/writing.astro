@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const writing = await getCollection("writing");
+---
+
+<BaseLayout title="Writing" description="Writing and publications by Gayathri Mohan.">
+  <section class="container hero">
+    <p class="eyebrow">Writing</p>
+    <h1>Books, essays, and frameworks for quality engineering leaders.</h1>
+    <p>
+      Gayathri shares practical guidance on AI-enabled quality, enterprise testing strategy, and
+      continuous delivery through books and industry publications.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="container section-grid">
+      {writing.map((entry) => (
+        <article class="card">
+          <h3>{entry.data.title}</h3>
+          <p class="muted">{entry.data.published ? entry.data.published.toLocaleDateString("en-US", { month: "long", year: "numeric" }) : ""}</p>
+          <p>{entry.data.description}</p>
+          {entry.data.link ? (
+            <a class="button secondary" href={entry.data.link} rel="noreferrer">
+              Read more
+            </a>
+          ) : null}
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

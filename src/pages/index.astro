@@ -1,33 +1,106 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const base = Astro.base === "/" ? "" : Astro.base;
+const base = Astro.base && Astro.base !== "/" ? Astro.base : "";
 const withBase = (path: string) => `${base}${path}`;
 ---
 
-<BaseLayout title="Home" description="Placeholder hero copy for the upcoming author site.">
-  <section class="container hero">
+<BaseLayout
+  title="Home"
+  description="Gayathri Mohan is a technology executive, author, and speaker specializing in AI-driven quality engineering and testing strategy."
+>
+  <section class="container hero hero-grid">
     <div>
-      <p class="eyebrow">Author • Engineer • Speaker</p>
-      <h1>Placeholder headline for Gayathri Mohan’s author platform.</h1>
+      <p class="eyebrow">Speaker • Trainer • Author</p>
+      <h1>AI-driven quality engineering that turns testing strategy into business impact.</h1>
       <p>
-        This is a temporary hero message. It will be replaced with a short positioning statement
-        that introduces the book, speaking, and consulting work.
+        Gayathri Mohan is a technology executive helping global teams modernize testing through
+        scalable automation, AI-enabled quality engineering, and enterprise transformation.
       </p>
       <div class="cta-row">
-        <a class="button primary" href={withBase("/book")}>Primary CTA</a>
-        <a class="button secondary" href={withBase("/contact")}>Secondary CTA</a>
+        <a class="button primary" href={withBase("/speaking")}>Book speaking or training</a>
+        <a class="button secondary" href={withBase("/book")}>Explore the book</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src={withBase("/images/gayathri-mohan-headshot.svg")} alt="Portrait of Gayathri Mohan" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-grid">
+      <div>
+        <h2>Speaking &amp; training</h2>
+        <p class="muted">
+          Gayathri delivers executive-level keynotes and hands-on trainings on modern testing,
+          AI adoption, and quality transformation. She has spoken at Øredev, SeleniumConf,
+          Test Istanbul, and more.
+        </p>
+        <div class="cta-row">
+          <a class="button secondary" href={withBase("/speaking")}>View topics</a>
+          <a class="button primary" href={withBase("/contact")}>Request availability</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Featured training</h3>
+        <p>
+          <strong>Generative AI for Software Testing</strong> — O'Reilly Live Training covering
+          practical workflows for automation, AI tooling, and quality strategy.
+        </p>
+        <a
+          class="button secondary"
+          href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/"
+          rel="noreferrer"
+        >
+          View on O'Reilly
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-grid">
+      <div class="card">
+        <img
+          src={withBase("/images/full-stack-testing-cover.svg")}
+          alt="Full Stack Testing book cover"
+          style="width: 100%; border-radius: 18px;"
+        />
+      </div>
+      <div>
+        <h2>Author &amp; thought leadership</h2>
+        <p class="muted">
+          Author of O'Reilly's <em>Full Stack Testing</em>, a definitive reference on AI-driven
+          quality engineering, CI/CD integration, and testing strategies for emerging
+          technologies.
+        </p>
+        <blockquote class="card" style="margin: 1.5rem 0;">
+          <p>
+            “This is the first attempt I have seen to bring all the various software testing
+            disciplines together in a single publication… this is a book I would gladly add to
+            my IT reference library.”
+          </p>
+          <p class="muted">— Ian Molyneaux, author of O'Reilly's “The Art of Application Performance Testing”</p>
+        </blockquote>
+        <a class="button secondary" href={withBase("/book")}>Learn about the book</a>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2>Highlights to replace later</h2>
+      <h2>Highlights</h2>
       <ul>
-        <li>Placeholder highlight #1 that captures a key theme.</li>
-        <li>Placeholder highlight #2 describing impact or expertise.</li>
-        <li>Placeholder highlight #3 for a book or speaking focus.</li>
+        <li>
+          Technology executive specializing in AI-driven quality engineering and large-scale
+          delivery transformation.
+        </li>
+        <li>
+          Creator of the Evolutionary Testing Strategy and the IoT Testing Atlas frameworks.
+        </li>
+        <li>
+          Recognized as one of “100 Women in Tech to Follow and Learn From” by Agile Testing Days.
+        </li>
       </ul>
     </div>
   </section>

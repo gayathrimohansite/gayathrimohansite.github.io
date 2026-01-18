@@ -1,7 +1,7 @@
 ---
-title: "Sample talk title"
-description: "Placeholder abstract for a future talk description."
-event: "Placeholder Conference"
-date: 2025-01-01
+title: "Generative AI for Software Testing"
+description: "Live training on applying generative AI techniques to modern testing workflows, automation, and quality strategy."
+event: "O'Reilly Live Training"
+date: 2024-05-01
 ---
-A short placeholder body for this talk entry.
+A hands-on session focused on practical AI adoption for test automation and quality engineering teams.

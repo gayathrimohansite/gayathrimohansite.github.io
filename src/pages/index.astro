@@ -1,4 +1,5 @@
 ---
+import { Award, Layers, Sparkles } from "lucide-react";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const base = Astro.base && Astro.base !== "/" ? Astro.base : "";
@@ -18,7 +19,7 @@ const withBase = (path: string) => `${base}${path}`;
         scalable automation, AI-enabled quality engineering, and enterprise transformation.
       </p>
       <div class="cta-row">
-        <a class="button primary" href={withBase("/speaking")}>Book speaking or training</a>
+        <a class="button primary" href={withBase("/speaking")}>Contact for speaking or training</a>
         <a class="button secondary" href={withBase("/book")}>Explore the book</a>
       </div>
     </div>
@@ -37,8 +38,8 @@ const withBase = (path: string) => `${base}${path}`;
           Test Istanbul, and more.
         </p>
         <div class="cta-row">
-          <a class="button secondary" href={withBase("/speaking")}>View topics</a>
           <a class="button primary" href={withBase("/contact")}>Request availability</a>
+          <a class="button secondary" href={withBase("/speaking")}>View topics</a>
         </div>
       </div>
       <div class="card">
@@ -90,18 +91,33 @@ const withBase = (path: string) => `${base}${path}`;
   <section class="section">
     <div class="container">
       <h2>Highlights</h2>
-      <ul>
-        <li>
-          Technology executive specializing in AI-driven quality engineering and large-scale
-          delivery transformation.
-        </li>
-        <li>
-          Creator of the Evolutionary Testing Strategy and the IoT Testing Atlas frameworks.
-        </li>
-        <li>
-          Recognized as one of “100 Women in Tech to Follow and Learn From” by Agile Testing Days.
-        </li>
-      </ul>
+      <div class="highlights-grid">
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">
+            <Sparkles size={28} className="highlight-icon__svg" />
+          </div>
+          <p>
+            Technology executive specializing in AI-driven quality engineering and large-scale
+            delivery transformation.
+          </p>
+        </article>
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">
+            <Layers size={28} className="highlight-icon__svg" />
+          </div>
+          <p>
+            Creator of the Evolutionary Testing Strategy and the IoT Testing Atlas frameworks.
+          </p>
+        </article>
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">
+            <Award size={28} className="highlight-icon__svg" />
+          </div>
+          <p>
+            Recognized as one of “100 Women in Tech to Follow and Learn From” by Agile Testing Days.
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,489 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/base";
+---
+
+<BaseLayout title="Training" description="Live training courses and workshops by Gayathri Mohan on AI-driven quality engineering, testing strategy, and software quality.">
+
+  <!-- Hero Section -->
+  <section class="container hero">
+    <p class="eyebrow">Training & Workshops</p>
+    <h1>Hands-on training for testing excellence</h1>
+    <p class="hero-description">
+      From O'Reilly live courses to custom corporate workshops, I deliver practical training
+      that helps teams master modern testing strategies and AI-enabled quality engineering.
+    </p>
+    <div class="cta-row">
+      <a class="button primary" href={withBase("/contact")}>Request custom training</a>
+    </div>
+  </section>
+
+  <!-- Featured O'Reilly Training -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="featured-training">
+        <div class="featured-content">
+          <div class="platform-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            O'Reilly Live Training
+          </div>
+          <h2>Generative AI for Software Testing</h2>
+          <p class="training-subtitle">Master practical AI workflows for modern testing</p>
+          <p class="muted">
+            This hands-on live training covers the essential skills for integrating generative AI
+            into your testing practice. Learn to leverage large language models for test automation,
+            exploratory testing, and building comprehensive quality strategies.
+          </p>
+          <div class="training-meta">
+            <div class="meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>4 hours live instruction</span>
+            </div>
+            <div class="meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Interactive Q&A</span>
+            </div>
+            <div class="meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              <span>Hands-on exercises</span>
+            </div>
+          </div>
+          <a
+            class="button primary"
+            href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Register on O'Reilly
+          </a>
+        </div>
+        <div class="featured-visual">
+          <div class="course-card">
+            <div class="course-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+            </div>
+            <h3>Generative AI for Software Testing</h3>
+            <p>O'Reilly Live Training</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Learn -->
+  <section class="section">
+    <div class="container">
+      <h2>What You'll Learn</h2>
+      <p class="muted section-subtitle">Key skills covered in the Generative AI training</p>
+      <div class="topics-grid">
+        <div class="topic-item">
+          <span class="topic-number">01</span>
+          <div>
+            <h4>AI-Assisted Test Generation</h4>
+            <p>Generate test cases, test data, and automation scripts using LLMs</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-number">02</span>
+          <div>
+            <h4>Prompt Engineering for Testers</h4>
+            <p>Craft effective prompts to get reliable, actionable testing outputs</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-number">03</span>
+          <div>
+            <h4>AI-Enhanced Exploratory Testing</h4>
+            <p>Use AI tools to augment your exploratory testing sessions</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-number">04</span>
+          <div>
+            <h4>Automation Integration</h4>
+            <p>Integrate GenAI into existing test automation frameworks</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-number">05</span>
+          <div>
+            <h4>Quality Strategy with AI</h4>
+            <p>Build comprehensive quality strategies that leverage AI capabilities</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-number">06</span>
+          <div>
+            <h4>Evaluating AI Testing Tools</h4>
+            <p>Assess and select the right AI tools for your testing needs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Training Options -->
+  <section class="section custom-section">
+    <div class="container">
+      <div class="custom-grid">
+        <div>
+          <h2>Custom Training Options</h2>
+          <p class="muted">
+            Beyond public courses, I offer tailored training programs designed for your organization's
+            specific needs and technology stack.
+          </p>
+        </div>
+        <div class="options-list">
+          <div class="option-card">
+            <div class="option-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Corporate Workshops</h4>
+              <p>On-site or virtual workshops for your team, customized to your tech stack and challenges.</p>
+            </div>
+          </div>
+          <div class="option-card">
+            <div class="option-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div>
+              <h4>Executive Briefings</h4>
+              <p>Strategic sessions for leadership on AI adoption, quality transformation, and ROI.</p>
+            </div>
+          </div>
+          <div class="option-card">
+            <div class="option-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div>
+              <h4>Certification Programs</h4>
+              <p>Multi-day programs with assessments for comprehensive skill development.</p>
+            </div>
+          </div>
+          <div class="option-card">
+            <div class="option-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <div>
+              <h4>Coaching & Mentoring</h4>
+              <p>Ongoing support for testing leaders and teams through transformation journeys.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Topics -->
+  <section class="section">
+    <div class="container">
+      <h2>Training Topics</h2>
+      <p class="muted section-subtitle">Sessions can be delivered as workshops, boot camps, or extended programs</p>
+      <div class="training-topics-grid">
+        <div class="training-topic-card">
+          <h4>Generative AI for Testing</h4>
+          <p>Practical AI workflows, prompt engineering, and tool integration for testers.</p>
+        </div>
+        <div class="training-topic-card">
+          <h4>Full Stack Testing Fundamentals</h4>
+          <p>Comprehensive testing strategies from unit to end-to-end, based on the O'Reilly book.</p>
+        </div>
+        <div class="training-topic-card">
+          <h4>Test Automation Architecture</h4>
+          <p>Building scalable, maintainable automation frameworks for enterprise systems.</p>
+        </div>
+        <div class="training-topic-card">
+          <h4>Performance & Load Testing</h4>
+          <p>Designing and executing performance tests, analyzing results, and optimization.</p>
+        </div>
+        <div class="training-topic-card">
+          <h4>Security Testing Essentials</h4>
+          <p>Threat modeling, security testing techniques, and integrating security into CI/CD.</p>
+        </div>
+        <div class="training-topic-card">
+          <h4>Testing Strategy & Leadership</h4>
+          <p>Building quality culture, metrics that matter, and leading testing transformation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container cta-content">
+      <h2>Ready to Upskill Your Team?</h2>
+      <p class="muted">
+        Let's discuss how training can accelerate your team's testing capabilities and
+        help you adopt AI-driven quality engineering practices.
+      </p>
+      <div class="cta-row">
+        <a class="button primary" href={withBase("/contact")}>Get in Touch</a>
+        <a class="button secondary" href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/" target="_blank" rel="noreferrer">
+          View O'Reilly Course
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-description {
+    max-width: 55ch;
+    color: hsl(var(--muted-foreground));
+    font-size: 1.1rem;
+  }
+
+  /* Featured Section */
+  .featured-section {
+    background: hsl(var(--primary) / 0.05);
+  }
+
+  .featured-training {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .featured-training {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-visual {
+      order: -1;
+    }
+  }
+
+  .platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .featured-content h2 {
+    margin: 0 0 0.5rem;
+  }
+
+  .training-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: hsl(var(--foreground));
+    margin: 0 0 1rem;
+  }
+
+  .training-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .meta-item svg {
+    color: hsl(var(--primary));
+  }
+
+  .course-card {
+    padding: 2.5rem;
+    background: hsl(var(--background));
+    border-radius: 20px;
+    border: 1px solid hsl(var(--border));
+    text-align: center;
+    box-shadow: 0 16px 32px -8px hsl(var(--foreground) / 0.1);
+  }
+
+  .course-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    border-radius: 20px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .course-card h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .course-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: hsl(var(--primary));
+    font-weight: 500;
+  }
+
+  /* Section Subtitle */
+  .section-subtitle {
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Topics Grid */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .topic-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: background 0.2s ease;
+  }
+
+  .topic-item:hover {
+    background: hsl(var(--secondary));
+  }
+
+  .topic-number {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    line-height: 1;
+  }
+
+  .topic-item h4 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+  }
+
+  .topic-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Custom Section */
+  .custom-section {
+    background: hsl(var(--secondary) / 0.5);
+  }
+
+  .custom-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 800px) {
+    .custom-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .options-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .option-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: hsl(var(--background));
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .option-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .option-card h4 {
+    font-size: 1rem;
+    margin: 0 0 0.35rem;
+  }
+
+  .option-card p {
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Training Topics Grid */
+  .training-topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .training-topic-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .training-topic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px hsl(var(--foreground) / 0.1);
+  }
+
+  .training-topic-card h4 {
+    font-size: 1.05rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .training-topic-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+    line-height: 1.6;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: hsl(var(--secondary));
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .cta-content h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-content .cta-row {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+</style>

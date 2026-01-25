@@ -1,5 +1,4 @@
 ---
-import { Award, Layers, Sparkles } from "lucide-react";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { withBase } from "../lib/base";
 ---
@@ -8,114 +7,654 @@ import { withBase } from "../lib/base";
   title="Home"
   description="Gayathri Mohan is a technology executive, author, and speaker specializing in AI-driven quality engineering and testing strategy."
 >
-  <section class="container hero hero-grid">
-    <div>
-      <p class="eyebrow">Speaker • Trainer • Author</p>
-      <h1>AI-driven quality engineering that turns testing strategy into business impact.</h1>
-      <p>
-        Gayathri Mohan is a technology executive helping global teams modernize testing through
-        scalable automation, AI-enabled quality engineering, and enterprise transformation.
-      </p>
-      <div class="cta-row">
-        <a class="button primary" href={withBase("/speaking")}>Contact for speaking or training</a>
-        <a class="button secondary" href={withBase("/book")}>Explore the book</a>
-      </div>
-    </div>
-    <div class="hero-media">
-      <img src={withBase("/images/gayathri-mohan-headshot.svg")} alt="Portrait of Gayathri Mohan" />
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container section-grid">
-      <div>
-        <h2>Speaking &amp; training</h2>
-        <p class="muted">
-          Gayathri delivers executive-level keynotes and hands-on trainings on modern testing,
-          AI adoption, and quality transformation. She has spoken at Øredev, SeleniumConf,
-          Test Istanbul, and more.
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <p class="eyebrow">Speaker • Trainer • Author</p>
+        <h1>Gayathri Mohan</h1>
+        <p class="hero-tagline">
+          Turning testing strategy into business impact through AI-driven quality engineering
+        </p>
+        <p class="hero-description">
+          Technology executive helping global teams modernize testing through scalable automation,
+          AI-enabled quality engineering, and enterprise transformation.
         </p>
         <div class="cta-row">
-          <a class="button primary" href={withBase("/contact")}>Request availability</a>
-          <a class="button secondary" href={withBase("/speaking")}>View topics</a>
+          <a class="button primary" href={withBase("/contact")}>Get in touch</a>
+          <a class="button secondary" href={withBase("/about")}>Learn more</a>
         </div>
       </div>
-      <div class="card">
-        <h3>Featured training</h3>
-        <p>
-          <strong>Generative AI for Software Testing</strong> — O'Reilly Live Training covering
-          practical workflows for automation, AI tooling, and quality strategy.
-        </p>
-        <a
-          class="button secondary"
-          href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/"
-          rel="noreferrer"
-        >
-          View on O'Reilly
-        </a>
+      <div class="hero-image">
+        <img src={withBase("/images/gayathri-mohan-headshot.svg")} alt="Portrait of Gayathri Mohan" />
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container section-grid">
-      <div class="card">
-        <img
-          src={withBase("/images/full-stack-testing-cover.svg")}
-          alt="Full Stack Testing book cover"
-          style="width: 100%; border-radius: 18px;"
-        />
-      </div>
-      <div>
-        <h2>Author &amp; thought leadership</h2>
-        <p class="muted">
-          Author of O'Reilly's <em>Full Stack Testing</em>, a definitive reference on AI-driven
-          quality engineering, CI/CD integration, and testing strategies for emerging
-          technologies.
-        </p>
-        <blockquote class="card" style="margin: 1.5rem 0;">
-          <p>
-            “This is the first attempt I have seen to bring all the various software testing
-            disciplines together in a single publication… this is a book I would gladly add to
-            my IT reference library.”
-          </p>
-          <p class="muted">— Ian Molyneaux, author of O'Reilly's “The Art of Application Performance Testing”</p>
-        </blockquote>
-        <a class="button secondary" href={withBase("/book")}>Learn about the book</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- What I Do Section -->
   <section class="section">
     <div class="container">
-      <h2>Highlights</h2>
-      <div class="highlights-grid">
-        <article class="highlight-card">
-          <div class="highlight-icon" aria-hidden="true">
-            <Sparkles size={28} className="highlight-icon__svg" />
+      <div class="section-header">
+        <h2>What I Do</h2>
+        <p class="muted">Helping organizations achieve quality at scale</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
           </div>
-          <p>
-            Technology executive specializing in AI-driven quality engineering and large-scale
-            delivery transformation.
-          </p>
-        </article>
-        <article class="highlight-card">
-          <div class="highlight-icon" aria-hidden="true">
-            <Layers size={28} className="highlight-icon__svg" />
+          <h3>AI-Driven Quality Engineering</h3>
+          <p>Strategic consulting on GenAI adoption in testing, helping teams integrate AI tools into their quality workflows.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/><path d="m15 5 3 3"/></svg>
           </div>
-          <p>
-            Creator of the Evolutionary Testing Strategy and the IoT Testing Atlas frameworks.
-          </p>
-        </article>
-        <article class="highlight-card">
-          <div class="highlight-icon" aria-hidden="true">
-            <Award size={28} className="highlight-icon__svg" />
+          <h3>Enterprise Transformation</h3>
+          <p>Large-scale testing strategy and delivery transformation for organizations scaling quality practices.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <p>
-            Recognized as one of “100 Women in Tech to Follow and Learn From” by Agile Testing Days.
+          <h3>Writing & Thought Leadership</h3>
+          <p>Author of O'Reilly's Full Stack Testing, sharing frameworks and strategies for modern testing excellence.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          </div>
+          <h3>Speaking & Training</h3>
+          <p>International keynotes and workshops on AI-enabled testing, quality strategy, and leadership transformation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Book Section -->
+  <section class="section book-section">
+    <div class="container">
+      <div class="book-feature">
+        <div class="book-cover">
+          <div class="book-cover-wrapper">
+            <img src={withBase("/images/full-stack-testing-cover.svg")} alt="Full Stack Testing book cover" />
+            <span class="edition-badge">2nd Edition</span>
+          </div>
+        </div>
+        <div class="book-info">
+          <span class="feature-label">O'Reilly Media</span>
+          <h2>Full Stack Testing</h2>
+          <p class="book-subtitle">A Practical Guide for Delivering High Quality Software in the Age of AI</p>
+          <p class="muted">
+            The definitive guide to modern software testing, fully updated with comprehensive AI coverage.
+            Learn to implement testing strategies across the full stack with 40+ tools and practical, hands-on examples.
           </p>
-        </article>
+          <blockquote class="book-quote">
+            "This is the first attempt I have seen to bring all the various software testing disciplines
+            together in a single publication… a book I would gladly add to my IT reference library."
+            <cite>— Ian Molyneaux, O'Reilly author</cite>
+          </blockquote>
+          <div class="cta-row">
+            <a class="button primary" href={withBase("/book")}>Learn about the book</a>
+            <a class="button secondary" href="https://www.oreilly.com/library/view/full-stack-testing/9798341636934/" target="_blank" rel="noreferrer">
+              Get Early Access
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaking Highlights -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Speaking</h2>
+        <p class="muted">International conferences and corporate events</p>
+      </div>
+      <div class="speaking-feature">
+        <div class="video-preview">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/I3YQnBsc874"
+              title="Evolutionary Testing Strategy - Øredev 2023"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="speaking-info">
+          <span class="feature-label">Featured Talk</span>
+          <h3>Evolutionary Testing Strategy</h3>
+          <p class="muted">
+            A comprehensive framework for building testing strategies that evolve with your organization's
+            maturity, from startup to enterprise scale.
+          </p>
+          <div class="conferences-inline">
+            <p class="conferences-label">Speaking at</p>
+            <p class="conference-names">Øredev • Selenium Conf • Test Istanbul • JaSST Tokyo • O'Reilly</p>
+          </div>
+          <div class="cta-row">
+            <a class="button primary" href={withBase("/speaking")}>View all talks</a>
+            <a class="button secondary" href={withBase("/contact")}>Invite to speak</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Section -->
+  <section class="section training-section">
+    <div class="container">
+      <div class="training-feature">
+        <div class="training-info">
+          <span class="feature-label">O'Reilly Live Training</span>
+          <h2>Generative AI for Software Testing</h2>
+          <p class="muted">
+            A hands-on live training covering practical workflows for integrating AI into your testing practice.
+            Learn to leverage GenAI tools for test automation, exploratory testing, and quality strategy.
+          </p>
+          <ul class="training-highlights">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Practical AI-assisted test generation
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Integrating LLMs into testing workflows
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Building AI-augmented quality strategies
+            </li>
+          </ul>
+          <div class="cta-row">
+            <a class="button primary" href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/" target="_blank" rel="noreferrer">
+              View on O'Reilly
+            </a>
+            <a class="button secondary" href={withBase("/training")}>All training options</a>
+          </div>
+        </div>
+        <div class="training-visual">
+          <div class="oreilly-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="m9 9.5 2 2 4-4"/></svg>
+            <span class="badge-text">Live Training</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recognition Section -->
+  <section class="section recognition-section">
+    <div class="container">
+      <div class="recognition-grid">
+        <div class="recognition-card">
+          <div class="recognition-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <h3>Industry Recognition</h3>
+          <p>Recognized as one of "100 Women in Tech to Follow and Learn From" by Agile Testing Days</p>
+        </div>
+        <div class="recognition-card">
+          <div class="recognition-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Framework Creator</h3>
+          <p>Creator of the Evolutionary Testing Strategy and IoT Testing Atlas frameworks</p>
+        </div>
+        <div class="recognition-card">
+          <div class="recognition-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Global Impact</h3>
+          <p>Empowering testing teams worldwide through consulting, training, and thought leadership</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container cta-content">
+      <h2>Let's Work Together</h2>
+      <p class="muted">
+        Whether you're looking for a keynote speaker, corporate training, or strategic consulting on
+        AI-driven quality engineering — I'd love to hear from you.
+      </p>
+      <div class="cta-row">
+        <a class="button primary" href={withBase("/contact")}>Get in Touch</a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(180deg, hsl(var(--secondary) / 0.3) 0%, hsl(var(--background)) 100%);
+    padding: 4rem 0 3rem;
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-image {
+      order: -1;
+    }
+
+    .cta-row {
+      justify-content: center;
+    }
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    margin: 0.5rem 0 1rem;
+    line-height: 1.1;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-style: italic;
+    color: hsl(var(--primary));
+    margin: 0 0 1rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: hsl(var(--muted-foreground));
+    max-width: 50ch;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .hero-description {
+      max-width: none;
+    }
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 24px;
+    box-shadow: 0 32px 64px -16px hsl(var(--foreground) / 0.15);
+  }
+
+  @media (max-width: 800px) {
+    .hero-image img {
+      max-width: 280px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  /* Section Header */
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-header h2 {
+    margin-bottom: 0.25rem;
+  }
+
+  .section-header .muted {
+    margin: 0;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.75rem;
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px hsl(var(--foreground) / 0.1);
+  }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .service-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: hsl(var(--muted-foreground));
+    line-height: 1.6;
+  }
+
+  /* Book Section */
+  .book-section {
+    background: hsl(var(--secondary) / 0.5);
+  }
+
+  .book-feature {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .book-feature {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .book-cover {
+      order: -1;
+    }
+
+    .book-info .cta-row {
+      justify-content: center;
+    }
+  }
+
+  .book-cover-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .book-cover img {
+    width: 240px;
+    border-radius: 12px;
+    box-shadow: 0 24px 48px -16px hsl(var(--foreground) / 0.25);
+  }
+
+  @media (max-width: 800px) {
+    .book-cover img {
+      width: 200px;
+    }
+  }
+
+  .edition-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.4);
+  }
+
+  .feature-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .book-info h2 {
+    margin: 0 0 0.5rem;
+  }
+
+  .book-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: hsl(var(--foreground));
+    margin: 0 0 1rem;
+  }
+
+  .book-quote {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    background: hsl(var(--background));
+    border-radius: 12px;
+    border-left: 3px solid hsl(var(--primary));
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .book-quote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-style: normal;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Speaking Feature */
+  .speaking-feature {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  @media (max-width: 800px) {
+    .speaking-feature {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .video-preview {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: hsl(var(--secondary));
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .speaking-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .conferences-inline {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: hsl(var(--secondary));
+    border-radius: 8px;
+  }
+
+  .conferences-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: hsl(var(--muted-foreground));
+    margin: 0 0 0.35rem;
+  }
+
+  .conference-names {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: hsl(var(--foreground));
+    margin: 0;
+  }
+
+  /* Training Section */
+  .training-section {
+    background: hsl(var(--primary) / 0.05);
+  }
+
+  .training-feature {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .training-feature {
+      grid-template-columns: 1fr;
+    }
+
+    .training-visual {
+      order: -1;
+      justify-self: center;
+    }
+  }
+
+  .training-info h2 {
+    margin: 0 0 1rem;
+  }
+
+  .training-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .training-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    color: hsl(var(--foreground));
+    font-size: 0.95rem;
+  }
+
+  .training-highlights svg {
+    color: hsl(var(--primary));
+    flex-shrink: 0;
+  }
+
+  .training-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .oreilly-badge {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: hsl(var(--background));
+    border: 2px solid hsl(var(--primary));
+    border-radius: 50%;
+    color: hsl(var(--primary));
+    box-shadow: 0 16px 32px -8px hsl(var(--primary) / 0.2);
+  }
+
+  .badge-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Recognition Section */
+  .recognition-section {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary) / 0.3) 100%);
+  }
+
+  .recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .recognition-card {
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    text-align: center;
+  }
+
+  .recognition-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    border-radius: 16px;
+    margin: 0 auto 1.25rem;
+  }
+
+  .recognition-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .recognition-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: hsl(var(--muted-foreground));
+    line-height: 1.6;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: hsl(var(--secondary));
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .cta-content h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-content .cta-row {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+</style>

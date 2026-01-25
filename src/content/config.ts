@@ -20,16 +20,6 @@ const writing = defineCollection({
   }),
 });
 
-const press = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    outlet: z.string().optional(),
-    description: z.string().optional(),
-    link: z.string().url().optional(),
-  }),
-});
-
 const testimonials = defineCollection({
   type: "content",
   schema: z.object({
@@ -39,4 +29,4 @@ const testimonials = defineCollection({
   }),
 });
 
-export const collections = { talks, writing, press, testimonials };
+export const collections = { talks, writing, testimonials };

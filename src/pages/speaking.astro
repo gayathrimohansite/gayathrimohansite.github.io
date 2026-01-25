@@ -1,67 +1,607 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import { withBase } from "../lib/base";
 
-const talks = await getCollection("talks");
+// Speaking engagements with videos
+const talksWithVideos = [
+  {
+    title: "Evolutionary Testing Strategy",
+    event: "Øredev 2023",
+    date: "November 8, 2023",
+    videoId: "I3YQnBsc874",
+    detailsUrl: "https://oredev.org",
+    featured: true
+  },
+  {
+    title: "How to Approach Continuous Testing of Cross-Functional Requirements?",
+    event: "Selenium Conf 2022",
+    date: "July 30, 2022",
+    videoId: "i--RzR1hwek",
+    detailsUrl: "https://confengine.com/conferences/selenium-conf-2022/proposal/16672/how-to-approach-continuous-testing-of-cross-functional-requirements"
+  },
+  {
+    title: "Continuous Testing Strategy for CFRs",
+    event: "Agile Testing Alliance 2023",
+    date: "December 10, 2022",
+    videoId: "ziNgF_iL_J8",
+    detailsUrl: "https://gtr.agiletestingalliance.org/"
+  },
+  {
+    title: "Building a Full Stack Testing CI/CD Pipeline",
+    event: "Konfhub Meetup",
+    date: "June 25, 2022",
+    videoId: "sQuIhkDJRIw",
+    detailsUrl: null
+  }
+];
+
+// Speaking engagements without videos
+const otherTalks = [
+  {
+    title: "Evolutionary Testing Strategy",
+    event: "Test Istanbul 2023",
+    date: "October 5, 2023",
+    type: "Keynote",
+    detailsUrl: "https://testistanbul.org/gayathri-mohan-2023/"
+  }
+];
+
+// Notable conferences spoken at
+const conferences = [
+  "Øredev",
+  "Selenium Conf",
+  "Test Istanbul",
+  "Agile Testing Alliance",
+  "JaSST Tokyo",
+  "O'Reilly Live Training"
+];
 ---
 
-<BaseLayout title="Speaking" description="Speaking engagements and training led by Gayathri Mohan.">
-  <section class="container hero">
-    <p class="eyebrow">Speaking &amp; Training</p>
-    <h1>Executive keynotes and hands-on training for modern testing leaders.</h1>
-    <p>
-      Gayathri speaks internationally on AI-enabled quality engineering, enterprise testing strategy,
-      and large-scale transformation. Sessions range from executive briefings to deep technical
-      workshops.
-    </p>
-    <div class="cta-row">
-      <a class="button primary" href="mailto:gayathrimohan88@gmail.com">Request availability</a>
-      <a class="button secondary" href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/" rel="noreferrer">
-        View O'Reilly training
+<BaseLayout title="Speaking" description="Keynotes, conference talks, and training sessions by Gayathri Mohan on AI-driven quality engineering and testing strategy.">
+
+  <!-- Upcoming Event Banner -->
+  <section class="upcoming-banner">
+    <div class="container">
+      <a href="https://jasst.jp/tokyo/26-about/" target="_blank" rel="noreferrer" class="banner-link">
+        <div class="banner-content">
+          <span class="banner-badge">Upcoming Keynote</span>
+          <img
+            src={withBase("/images/jasst26-tokyo-banner.png")}
+            alt="JaSST'26 Tokyo - Software Testing Symposium 2026"
+            class="banner-image"
+          />
+          <div class="banner-details">
+            <h2>When AI Joins the Test Team: Promise, Pitfalls, and the Future of Software Quality</h2>
+            <p class="banner-meta">
+              <span class="banner-date">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                March 19, 2026
+              </span>
+              <span class="banner-location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Tokyo, Japan
+              </span>
+            </p>
+            <span class="banner-cta">Learn more →</span>
+          </div>
+        </div>
       </a>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container section-grid">
-      <div>
-        <h2>Signature topics</h2>
-        <ul>
-          <li>AI-enabled quality engineering and GenAI adoption in testing.</li>
-          <li>Evolutionary Testing Strategy for enterprise-scale delivery.</li>
-          <li>Future-ready test automation across AR/VR, Blockchain, and IoT.</li>
-          <li>Executive readiness for quality transformation and governance.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Featured training</h3>
-        <p>
-          <strong>Generative AI for Software Testing</strong> — a live, practical workshop for
-          quality engineers and leaders looking to apply AI in automation and strategy.
-        </p>
-        <a
-          class="button secondary"
-          href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/"
-          rel="noreferrer"
-        >
-          See the O'Reilly listing
-        </a>
-      </div>
+  <!-- Hero Section -->
+  <section class="container hero">
+    <p class="eyebrow">Speaking & Training</p>
+    <h1>Keynotes and workshops for testing leaders</h1>
+    <p class="hero-description">
+      International speaker on AI-driven quality engineering, enterprise testing strategy,
+      and large-scale transformation. From executive briefings to hands-on technical workshops.
+    </p>
+    <div class="cta-row">
+      <a class="button primary" href={withBase("/contact")}>Request availability</a>
+      <a class="button secondary" href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/" target="_blank" rel="noreferrer">
+        O'Reilly Live Training
+      </a>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Conference Logos/Names -->
+  <section class="section conferences-section">
     <div class="container">
-      <h2>Recent sessions</h2>
-      <div class="section-grid">
-        {talks.map((talk) => (
-          <article class="card">
-            <h3>{talk.data.title}</h3>
-            <p class="muted">{talk.data.event} {talk.data.date ? `• ${talk.data.date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}` : ""}</p>
-            <p>{talk.data.description}</p>
-          </article>
+      <p class="conferences-label">Speaking at conferences worldwide</p>
+      <div class="conferences-list">
+        {conferences.map((conf) => (
+          <span class="conference-name">{conf}</span>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Featured Video -->
+  <section class="section">
+    <div class="container">
+      <h2>Featured Talk</h2>
+      <div class="featured-video-container">
+        <div class="video-wrapper">
+          <iframe
+            src={`https://www.youtube.com/embed/${talksWithVideos[0].videoId}`}
+            title={talksWithVideos[0].title}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="featured-video-info">
+          <span class="eyebrow">{talksWithVideos[0].event} • {talksWithVideos[0].date}</span>
+          <h3>{talksWithVideos[0].title}</h3>
+          <p class="muted">
+            A comprehensive framework for building testing strategies that evolve with your organization's
+            maturity, from startup to enterprise scale.
+          </p>
+          {talksWithVideos[0].detailsUrl && (
+            <a href={talksWithVideos[0].detailsUrl} target="_blank" rel="noreferrer" class="details-link">
+              View conference details →
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Talks -->
+  <section class="section">
+    <div class="container">
+      <h2>More Conference Talks</h2>
+      <div class="videos-grid">
+        {talksWithVideos.slice(1).map((talk) => (
+          <div class="video-card">
+            <div class="video-wrapper video-wrapper-small">
+              <iframe
+                src={`https://www.youtube.com/embed/${talk.videoId}`}
+                title={talk.title}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-card-info">
+              <span class="video-event">{talk.event}</span>
+              <h3>{talk.title}</h3>
+              <span class="video-date">{talk.date}</span>
+              {talk.detailsUrl && (
+                <a href={talk.detailsUrl} target="_blank" rel="noreferrer" class="details-link">
+                  Details →
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Notable Talks -->
+  <section class="section">
+    <div class="container">
+      <h2>Keynotes & Invited Talks</h2>
+      <div class="talks-list">
+        {otherTalks.map((talk) => (
+          <div class="talk-item">
+            <div class="talk-type-badge">{talk.type}</div>
+            <div class="talk-info">
+              <h3>{talk.title}</h3>
+              <p class="talk-meta">{talk.event} • {talk.date}</p>
+            </div>
+            {talk.detailsUrl && (
+              <a href={talk.detailsUrl} target="_blank" rel="noreferrer" class="button secondary">
+                View details
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics Section -->
+  <section class="section topics-section">
+    <div class="container">
+      <div class="topics-grid">
+        <div>
+          <h2>Signature Topics</h2>
+          <p class="muted">Sessions can be tailored as keynotes, workshops, or executive briefings.</p>
+        </div>
+        <div class="topics-list">
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+            </div>
+            <div>
+              <h4>AI-Enabled Quality Engineering</h4>
+              <p>GenAI adoption in testing, AI-driven automation, and the future of software quality.</p>
+            </div>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <div>
+              <h4>Evolutionary Testing Strategy</h4>
+              <p>Building testing strategies that scale with organizational maturity and delivery needs.</p>
+            </div>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+            <div>
+              <h4>Cross-Functional Requirements Testing</h4>
+              <p>Continuous testing approaches for performance, security, accessibility, and more.</p>
+            </div>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Executive Quality Transformation</h4>
+              <p>Leadership readiness, governance frameworks, and organizational change management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container cta-content">
+      <h2>Invite Gayathri to Speak</h2>
+      <p class="muted">
+        Available for keynotes, conference sessions, corporate workshops, and podcast appearances.
+        Let's discuss how to bring actionable insights to your audience.
+      </p>
+      <div class="cta-row">
+        <a class="button primary" href={withBase("/contact")}>Get in Touch</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  /* Upcoming Banner */
+  .upcoming-banner {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, hsl(var(--primary) / 0.1) 100%);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .banner-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .banner-link:hover {
+    color: inherit;
+  }
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .banner-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .banner-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .banner-details h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.3;
+  }
+
+  .banner-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 0 0 0.75rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .banner-date,
+  .banner-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .banner-cta {
+    color: hsl(var(--primary));
+    font-weight: 600;
+  }
+
+  .banner-link:hover .banner-cta {
+    text-decoration: underline;
+  }
+
+  /* Hero */
+  .hero-description {
+    max-width: 55ch;
+    color: hsl(var(--muted-foreground));
+    font-size: 1.1rem;
+  }
+
+  /* Conferences Section */
+  .conferences-section {
+    padding: 1.5rem 0;
+    border-top: none;
+  }
+
+  .conferences-label {
+    text-align: center;
+    font-size: 0.85rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .conferences-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+  }
+
+  .conference-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: hsl(var(--foreground) / 0.7);
+  }
+
+  /* Featured Video */
+  .featured-video-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .featured-video-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: hsl(var(--secondary));
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .featured-video-info {
+    padding-top: 0.5rem;
+  }
+
+  .featured-video-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .details-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: hsl(var(--primary));
+    font-weight: 500;
+  }
+
+  .details-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Videos Grid */
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .video-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-wrapper-small {
+    border-radius: 10px;
+  }
+
+  .video-card-info {
+    padding: 1rem 0;
+  }
+
+  .video-event {
+    font-size: 0.85rem;
+    color: hsl(var(--primary));
+    font-weight: 500;
+  }
+
+  .video-card-info h3 {
+    font-size: 1.1rem;
+    margin: 0.35rem 0 0.5rem;
+    line-height: 1.4;
+  }
+
+  .video-date {
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .video-card .details-link {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Other Talks */
+  .talks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .talk-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+  }
+
+  @media (max-width: 600px) {
+    .talk-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  .talk-type-badge {
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .talk-info {
+    flex: 1;
+  }
+
+  .talk-info h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.25rem;
+  }
+
+  .talk-meta {
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0;
+  }
+
+  /* Topics Section */
+  .topics-section {
+    background: hsl(var(--secondary) / 0.5);
+  }
+
+  .topics-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 800px) {
+    .topics-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .topics-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .topic-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: hsl(var(--background));
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .topic-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .topic-card h4 {
+    font-size: 1rem;
+    margin: 0 0 0.35rem;
+  }
+
+  .topic-card p {
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: hsl(var(--secondary));
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .cta-content h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-content .cta-row {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+</style>

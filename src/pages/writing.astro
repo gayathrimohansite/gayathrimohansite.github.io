@@ -1,34 +1,601 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import { withBase } from "../lib/base";
 
-const writing = await getCollection("writing");
+// Books
+const books = {
+  secondEdition: {
+    title: "Full Stack Testing",
+    subtitle: "A Practical Guide for Delivering High Quality Software in the Age of AI",
+    edition: "2nd Edition",
+    status: "Early Access",
+    publisher: "O'Reilly Media",
+    year: "2026",
+    description: "Fully updated with comprehensive AI coverage, 40+ testing tools, and practical hands-on examples for modern software teams.",
+    link: "https://www.oreilly.com/library/view/full-stack-testing/9798341636934/"
+  },
+  firstEdition: {
+    title: "Full Stack Testing",
+    edition: "1st Edition",
+    publisher: "O'Reilly Media",
+    year: "2022",
+    description: "The original comprehensive guide that has helped thousands of practitioners build full stack testing capabilities.",
+    links: {
+      oreilly: "https://www.oreilly.com/library/view/full-stack-testing/9781098108120/",
+      amazon: "https://amzn.eu/d/1tPHt1b"
+    }
+  }
+};
+
+// Featured article
+const featuredArticle = {
+  title: "Agile Threat Modelling",
+  description: "A comprehensive guide to integrating threat modeling into agile development. Learn the STRIDE framework and practical techniques for conducting security analysis as a team sport.",
+  publication: "martinfowler.com",
+  coAuthor: "Jim Gumbley",
+  date: "May 2025",
+  link: "https://martinfowler.com/articles/agile-threat-modelling.html"
+};
+
+// Articles
+const articles = [
+  {
+    title: "Evolutionary Testing Strategy",
+    description: "How testing strategies should evolve alongside business requirements and software architecture, with concrete adoption steps.",
+    publication: "Thoughtworks",
+    coAuthor: "Jonathan Deeming",
+    date: "September 2023",
+    link: "https://www.thoughtworks.com/en-br/insights/articles/evolutionary-testing-strategy"
+  },
+  {
+    title: "Seven Guiding Principles in Testing",
+    description: "Foundational testing principles that remain relevant across technology domains, from end-user focus to defect prevention.",
+    publication: "Thoughtworks",
+    date: "July 2021",
+    link: "https://www.thoughtworks.com/en-es/insights/blog/testing/seven-guiding-principles-testing"
+  },
+  {
+    title: "QA as a Catalyst for Quality-First Software",
+    description: "How QA professionals can transform from gatekeepers to quality advocates, enabling teams to build quality in from the start.",
+    publication: "Thoughtworks",
+    date: "2022",
+    link: "https://www.thoughtworks.com/en-br/insights/blog/testing/qa-catalyst-quality-first-software"
+  },
+  {
+    title: "The IoT Testing Atlas",
+    description: "A framework for testing Internet of Things products, visualizing system parameters to derive meaningful test scenarios across complex state combinations.",
+    publication: "Thoughtworks",
+    date: "April 2017",
+    link: "https://www.thoughtworks.com/en-gb/insights/blog/iot-testing-atlas"
+  }
+];
+
+// Podcasts
+const podcasts = [
+  {
+    title: "Why Full-Stack Testing Matters",
+    description: "Discussion on comprehensive testing approaches, the evolving role of QA professionals, and how DevOps has transformed testing responsibilities.",
+    show: "Thoughtworks Technology Podcast",
+    hosts: "Rebecca Parsons & Ken Mugrage",
+    date: "October 2022",
+    duration: "31 min",
+    link: "https://www.thoughtworks.com/en-sg/insights/podcasts/technology-podcasts/why-full-stack-testing-matters"
+  }
+];
 ---
 
-<BaseLayout title="Writing" description="Writing and publications by Gayathri Mohan.">
+<BaseLayout title="Writing" description="Books, articles, and publications by Gayathri Mohan on software testing, quality engineering, and AI-driven development.">
+
+  <!-- Hero Section -->
   <section class="container hero">
     <p class="eyebrow">Writing</p>
-    <h1>Books, essays, and frameworks for quality engineering leaders.</h1>
-    <p>
-      Gayathri shares practical guidance on AI-enabled quality, enterprise testing strategy, and
+    <h1>Books, articles, and frameworks for quality engineering</h1>
+    <p class="hero-description">
+      Practical guidance on AI-enabled quality, enterprise testing strategy, and
       continuous delivery through books and industry publications.
     </p>
   </section>
 
-  <section class="section">
-    <div class="container section-grid">
-      {writing.map((entry) => (
-        <article class="card">
-          <h3>{entry.data.title}</h3>
-          <p class="muted">{entry.data.published ? entry.data.published.toLocaleDateString("en-US", { month: "long", year: "numeric" }) : ""}</p>
-          <p>{entry.data.description}</p>
-          {entry.data.link ? (
-            <a class="button secondary" href={entry.data.link} rel="noreferrer">
-              Read more
+  <!-- Books Section -->
+  <section class="section books-section">
+    <div class="container">
+      <h2>Books</h2>
+
+      <!-- 2nd Edition - Featured -->
+      <div class="book-featured">
+        <div class="book-cover-container">
+          <img src={withBase("/images/full-stack-testing-cover.svg")} alt="Full Stack Testing book cover" class="book-cover" />
+          <span class="edition-badge">{books.secondEdition.status}</span>
+        </div>
+        <div class="book-info">
+          <span class="eyebrow">{books.secondEdition.edition} • {books.secondEdition.year}</span>
+          <h3>{books.secondEdition.title}</h3>
+          <p class="book-subtitle">{books.secondEdition.subtitle}</p>
+          <p class="muted">{books.secondEdition.description}</p>
+          <p class="book-publisher">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            {books.secondEdition.publisher}
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href={books.secondEdition.link} target="_blank" rel="noreferrer">
+              Get Early Access
             </a>
-          ) : null}
-        </article>
-      ))}
+            <a class="button secondary" href={withBase("/book")}>
+              Learn more
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1st Edition -->
+      <div class="book-secondary">
+        <div class="book-secondary-cover">
+          <img src={withBase("/images/full-stack-testing-cover.svg")} alt="Full Stack Testing 1st Edition" />
+        </div>
+        <div class="book-secondary-info">
+          <span class="edition-label">{books.firstEdition.edition} • {books.firstEdition.year}</span>
+          <h4>{books.firstEdition.title}</h4>
+          <p class="muted">{books.firstEdition.description}</p>
+          <div class="book-links">
+            <a href={books.firstEdition.links.oreilly} target="_blank" rel="noreferrer">O'Reilly</a>
+            <span class="link-divider">•</span>
+            <a href={books.firstEdition.links.amazon} target="_blank" rel="noreferrer">Amazon</a>
+            <span class="link-divider">•</span>
+            <a href={withBase("/book")}>Book page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Article -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="featured-article">
+        <div class="featured-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Featured on martinfowler.com
+        </div>
+        <h2>{featuredArticle.title}</h2>
+        <p class="featured-meta">
+          Co-authored with {featuredArticle.coAuthor} • {featuredArticle.date}
+        </p>
+        <p class="featured-description">{featuredArticle.description}</p>
+        <a class="button primary" href={featuredArticle.link} target="_blank" rel="noreferrer">
+          Read on martinfowler.com →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Articles & Publications</h2>
+      <div class="articles-grid">
+        {articles.map((article) => (
+          <article class="article-card">
+            <div class="article-publication">{article.publication}</div>
+            <h3>{article.title}</h3>
+            <p class="article-meta">
+              {article.coAuthor ? `Co-authored with ${article.coAuthor} • ` : ""}{article.date}
+            </p>
+            <p class="muted">{article.description}</p>
+            <a href={article.link} target="_blank" rel="noreferrer" class="article-link">
+              Read article →
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Podcasts Section -->
+  <section class="section podcasts-section">
+    <div class="container">
+      <h2>Podcast Appearances</h2>
+      <div class="podcasts-list">
+        {podcasts.map((podcast) => (
+          <a href={podcast.link} target="_blank" rel="noreferrer" class="podcast-card">
+            <div class="podcast-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+            </div>
+            <div class="podcast-info">
+              <span class="podcast-show">{podcast.show}</span>
+              <h3>{podcast.title}</h3>
+              <p class="podcast-meta">
+                With {podcast.hosts} • {podcast.date} • {podcast.duration}
+              </p>
+              <p class="muted">{podcast.description}</p>
+            </div>
+            <div class="podcast-play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container cta-content">
+      <h2>Want to Collaborate?</h2>
+      <p class="muted">
+        Open to guest posts, podcast appearances, and co-authoring opportunities
+        on topics related to software testing, quality engineering, and AI in development.
+      </p>
+      <div class="cta-row">
+        <a class="button primary" href={withBase("/contact")}>Get in Touch</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-description {
+    max-width: 55ch;
+    color: hsl(var(--muted-foreground));
+    font-size: 1.1rem;
+  }
+
+  /* Books Section */
+  .books-section {
+    background: hsl(var(--secondary) / 0.3);
+  }
+
+  .book-featured {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    background: hsl(var(--background));
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border));
+  }
+
+  @media (max-width: 700px) {
+    .book-featured {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .book-cover-container {
+      justify-self: center;
+    }
+
+    .book-info .cta-row {
+      justify-content: center;
+    }
+  }
+
+  .book-cover-container {
+    position: relative;
+  }
+
+  .book-cover {
+    width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 16px 32px -12px hsl(var(--foreground) / 0.2);
+  }
+
+  .edition-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.35rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 4px 8px hsl(var(--primary) / 0.3);
+  }
+
+  .book-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    margin: 0.5rem 0 0.25rem;
+  }
+
+  .book-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: hsl(var(--foreground));
+    margin: 0 0 1rem;
+  }
+
+  .book-publisher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: hsl(var(--muted-foreground));
+    margin: 1rem 0;
+  }
+
+  .book-publisher svg {
+    color: hsl(var(--primary));
+  }
+
+  /* 1st Edition */
+  .book-secondary {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: hsl(var(--background));
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border));
+  }
+
+  @media (max-width: 500px) {
+    .book-secondary {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .book-secondary-cover img {
+    width: 80px;
+    border-radius: 6px;
+  }
+
+  .book-secondary-info {
+    flex: 1;
+  }
+
+  .edition-label {
+    font-size: 0.8rem;
+    color: hsl(var(--muted-foreground));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .book-secondary-info h4 {
+    font-size: 1.1rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .book-secondary-info p {
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .book-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  .book-links a {
+    color: hsl(var(--primary));
+    font-weight: 500;
+  }
+
+  .book-links a:hover {
+    text-decoration: underline;
+  }
+
+  .link-divider {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Featured Article */
+  .featured-section {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, hsl(var(--primary) / 0.1) 100%);
+  }
+
+  .featured-article {
+    max-width: 700px;
+  }
+
+  .featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .featured-article h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .featured-meta {
+    font-size: 0.95rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0 0 1rem;
+  }
+
+  .featured-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+  }
+
+  /* Articles Grid */
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .article-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-publication {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .article-card h3 {
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+  }
+
+  .article-meta {
+    font-size: 0.85rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0 0 0.75rem;
+  }
+
+  .article-card .muted {
+    flex: 1;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .article-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: hsl(var(--primary));
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .article-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Podcasts */
+  .podcasts-section {
+    background: hsl(var(--secondary) / 0.3);
+  }
+
+  .podcasts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .podcast-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--background));
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .podcast-card:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.1);
+    color: inherit;
+  }
+
+  @media (max-width: 600px) {
+    .podcast-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .podcast-play {
+      display: none;
+    }
+  }
+
+  .podcast-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .podcast-info {
+    flex: 1;
+  }
+
+  .podcast-show {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .podcast-info h3 {
+    font-size: 1.2rem;
+    margin: 0.35rem 0 0.5rem;
+  }
+
+  .podcast-meta {
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0 0 0.5rem;
+  }
+
+  .podcast-info .muted {
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .podcast-play {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .podcast-play svg {
+    margin-left: 3px;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: hsl(var(--secondary));
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .cta-content h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-content .cta-row {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+</style>

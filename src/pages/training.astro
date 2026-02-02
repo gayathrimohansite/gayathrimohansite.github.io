@@ -8,10 +8,12 @@ import { withBase } from "../lib/base";
   <!-- Hero Section -->
   <section class="container hero">
     <h1>Hands on trainings and workshops</h1>
-    <p class="hero-description">
-      For online virtual courses and in-person corporate workshops
-    </p>
-    <a class="button primary" href={withBase("/contact")}>Contact Me</a>
+    <div class="hero-inline">
+      <p class="hero-description">
+        For online virtual courses and in-person corporate workshops
+      </p>
+      <a class="button primary small" href={withBase("/contact")}>Contact Me</a>
+    </div>
   </section>
 
   <!-- Featured O'Reilly Training -->
@@ -224,10 +226,22 @@ import { withBase } from "../lib/base";
 
 <style>
   /* Hero */
+  .hero-inline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
   .hero-description {
-    max-width: 55ch;
     color: hsl(var(--muted-foreground));
     font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .button.small {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
   }
 
   /* Featured Section */

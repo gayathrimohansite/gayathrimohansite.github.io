@@ -125,9 +125,15 @@ const testimonials = [
         <h2 class="book-title">{books.secondEdition.title}</h2>
         <p class="book-subtitle">{books.secondEdition.subtitle}</p>
         <p class="book-description">
-          The definitive guide to modern software testing, fully updated with comprehensive AI coverage.
-          Learn to implement testing strategies across the full stack with 40+ tools and practical, hands-on examples.
+          As AI continues to speed up software delivery, the need for comprehensive quality assurance has never been greater. Full Stack Testing is your essential guide to high-quality software testing across every layer of modern web and mobile applications. This updated second edition covers mobile, web, data, security, performance, accessibility, and other testing types and presents concrete strategies, tool selection criteria, and automation techniques proven to scale. Packed with actionable insights and exercises on over 40 testing tools, it prepares readers to build high-quality software immediately in fast-paced, high-stakes environments.
         </p>
+        <ul class="book-highlights">
+          <li>Implement effective testing strategies and test automation across web, mobile, and backend systems</li>
+          <li>Address essential nonfunctional requirements testing such as performance, security, and accessibility, among many others</li>
+          <li>Incorporate AI testing tools for both functional and nonfunctional testing and automation</li>
+          <li>Integrate testing in CI/CD workflows for faster, safer releases</li>
+          <li>Expand your career potential by building a well-rounded testing skill set</li>
+        </ul>
         <div class="book-meta">
           <span class="meta-item">500 pages</span>
           <span class="meta-divider">•</span>
@@ -358,14 +364,40 @@ const testimonials = [
   }
 
   .book-info {
-    max-width: 560px;
+    max-width: 640px;
   }
 
   .book-description {
     color: hsl(var(--muted-foreground));
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+
+  .book-highlights {
+    list-style: none;
+    padding: 0;
     margin: 0 0 0.5rem;
+  }
+
+  .book-highlights li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: hsl(var(--foreground));
+    line-height: 1.5;
+  }
+
+  .book-highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: hsl(var(--primary));
+    border-radius: 50%;
   }
 
   .book-hero-media {

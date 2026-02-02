@@ -52,16 +52,6 @@ const otherTalks = [
   }
 ];
 
-// Notable conferences spoken at
-const conferences = [
-  "Øredev",
-  "Selenium Conf",
-  "Test Istanbul",
-  "Agile Testing Alliance",
-  "JaSST Tokyo",
-  "O'Reilly Live Training"
-];
-
 // Podcasts
 const podcasts = [
   {
@@ -105,34 +95,6 @@ const podcasts = [
           </div>
         </div>
       </a>
-    </div>
-  </section>
-
-  <!-- Hero Section -->
-  <section class="container hero">
-    <p class="eyebrow">Speaking & Training</p>
-    <h1>Speaking</h1>
-    <p class="hero-description">
-      International speaker on AI-driven quality engineering, enterprise testing strategy,
-      and large-scale transformation. From executive briefings to hands-on technical workshops.
-    </p>
-    <div class="cta-row">
-      <a class="button primary" href={withBase("/contact")}>Request availability</a>
-      <a class="button secondary" href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/" target="_blank" rel="noreferrer">
-        O'Reilly Live Training
-      </a>
-    </div>
-  </section>
-
-  <!-- Conference Logos/Names -->
-  <section class="section conferences-section">
-    <div class="container">
-      <p class="conferences-label">Speaking at conferences worldwide</p>
-      <div class="conferences-list">
-        {conferences.map((conf) => (
-          <span class="conference-name">{conf}</span>
-        ))}
-      </div>
     </div>
   </section>
 
@@ -340,41 +302,6 @@ const podcasts = [
 
   .banner-link:hover .banner-cta {
     text-decoration: underline;
-  }
-
-  /* Hero */
-  .hero-description {
-    max-width: 55ch;
-    color: hsl(var(--muted-foreground));
-    font-size: 1.1rem;
-  }
-
-  /* Conferences Section */
-  .conferences-section {
-    padding: 1.5rem 0;
-    border-top: none;
-  }
-
-  .conferences-label {
-    text-align: center;
-    font-size: 0.85rem;
-    color: hsl(var(--muted-foreground));
-    margin: 0 0 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .conferences-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem 2rem;
-  }
-
-  .conference-name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: hsl(var(--foreground) / 0.7);
   }
 
   /* Video Wrapper */

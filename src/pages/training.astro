@@ -59,13 +59,11 @@ import { withBase } from "../lib/base";
           </a>
         </div>
         <div class="featured-visual">
-          <div class="course-card">
-            <div class="course-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-            </div>
-            <h3>Generative AI for Software Testing</h3>
-            <p>O'Reilly Live Training</p>
-          </div>
+          <img
+            src={withBase("/images/oreilly-genai-testing.png")}
+            alt="Generative AI for Software Testing - O'Reilly Live Training with Gayathri Mohan"
+            class="course-image"
+          />
         </div>
       </div>
     </div>
@@ -301,37 +299,11 @@ import { withBase } from "../lib/base";
     color: hsl(var(--primary));
   }
 
-  .course-card {
-    padding: 2.5rem;
-    background: hsl(var(--background));
-    border-radius: 20px;
-    border: 1px solid hsl(var(--border));
-    text-align: center;
+  .course-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
     box-shadow: 0 16px 32px -8px hsl(var(--foreground) / 0.1);
-  }
-
-  .course-icon {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: hsl(var(--primary) / 0.1);
-    color: hsl(var(--primary));
-    border-radius: 20px;
-    margin: 0 auto 1.5rem;
-  }
-
-  .course-card h3 {
-    font-size: 1.25rem;
-    margin: 0 0 0.5rem;
-  }
-
-  .course-card p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: hsl(var(--primary));
-    font-weight: 500;
   }
 
   /* Section Subtitle */

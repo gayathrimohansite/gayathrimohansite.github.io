@@ -9,8 +9,7 @@ const talksWithVideos = [
     event: "Øredev 2023",
     date: "November 8, 2023",
     videoId: "I3YQnBsc874",
-    detailsUrl: "https://oredev.org",
-    featured: true
+    detailsUrl: "https://oredev.org"
   },
   {
     title: "How to Approach Continuous Testing of Cross-Functional Requirements?",
@@ -43,17 +42,14 @@ const otherTalks = [
     date: "October 5, 2023",
     type: "Keynote",
     detailsUrl: "https://testistanbul.org/gayathri-mohan-2023/"
+  },
+  {
+    title: "Why Full-Stack Testing Matters",
+    event: "Thoughtworks Technology Podcast",
+    date: "October 2022",
+    type: "Podcast",
+    detailsUrl: "https://www.thoughtworks.com/en-sg/insights/podcasts/technology-podcasts/why-full-stack-testing-matters"
   }
-];
-
-// Notable conferences spoken at
-const conferences = [
-  "Øredev",
-  "Selenium Conf",
-  "Test Istanbul",
-  "Agile Testing Alliance",
-  "JaSST Tokyo",
-  "O'Reilly Live Training"
 ];
 
 // Podcasts
@@ -102,71 +98,12 @@ const podcasts = [
     </div>
   </section>
 
-  <!-- Hero Section -->
-  <section class="container hero">
-    <p class="eyebrow">Speaking & Training</p>
-    <h1>Keynotes and workshops for testing leaders</h1>
-    <p class="hero-description">
-      International speaker on AI-driven quality engineering, enterprise testing strategy,
-      and large-scale transformation. From executive briefings to hands-on technical workshops.
-    </p>
-    <div class="cta-row">
-      <a class="button primary" href={withBase("/contact")}>Request availability</a>
-      <a class="button secondary" href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/" target="_blank" rel="noreferrer">
-        O'Reilly Live Training
-      </a>
-    </div>
-  </section>
-
-  <!-- Conference Logos/Names -->
-  <section class="section conferences-section">
-    <div class="container">
-      <p class="conferences-label">Speaking at conferences worldwide</p>
-      <div class="conferences-list">
-        {conferences.map((conf) => (
-          <span class="conference-name">{conf}</span>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Video -->
+  <!-- Keynotes & Talks -->
   <section class="section">
     <div class="container">
-      <h2>Featured Talk</h2>
-      <div class="featured-video-container">
-        <div class="video-wrapper">
-          <iframe
-            src={`https://www.youtube.com/embed/${talksWithVideos[0].videoId}`}
-            title={talksWithVideos[0].title}
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="featured-video-info">
-          <span class="eyebrow">{talksWithVideos[0].event} • {talksWithVideos[0].date}</span>
-          <h3>{talksWithVideos[0].title}</h3>
-          <p class="muted">
-            A comprehensive framework for building testing strategies that evolve with your organization's
-            maturity, from startup to enterprise scale.
-          </p>
-          {talksWithVideos[0].detailsUrl && (
-            <a href={talksWithVideos[0].detailsUrl} target="_blank" rel="noreferrer" class="details-link">
-              View conference details →
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- More Talks -->
-  <section class="section">
-    <div class="container">
-      <h2>More Conference Talks</h2>
+      <h2>Keynotes & Talks</h2>
       <div class="videos-grid">
-        {talksWithVideos.slice(1).map((talk) => (
+        {talksWithVideos.map((talk) => (
           <div class="video-card">
             <div class="video-wrapper video-wrapper-small">
               <iframe
@@ -189,55 +126,20 @@ const podcasts = [
             </div>
           </div>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Other Notable Talks -->
-  <section class="section">
-    <div class="container">
-      <h2>Keynotes & Invited Talks</h2>
-      <div class="talks-list">
         {otherTalks.map((talk) => (
-          <div class="talk-item">
+          <div class="talk-card">
             <div class="talk-type-badge">{talk.type}</div>
-            <div class="talk-info">
+            <div class="talk-card-info">
+              <span class="video-event">{talk.event}</span>
               <h3>{talk.title}</h3>
-              <p class="talk-meta">{talk.event} • {talk.date}</p>
+              <span class="video-date">{talk.date}</span>
+              {talk.detailsUrl && (
+                <a href={talk.detailsUrl} target="_blank" rel="noreferrer" class="details-link">
+                  Details →
+                </a>
+              )}
             </div>
-            {talk.detailsUrl && (
-              <a href={talk.detailsUrl} target="_blank" rel="noreferrer" class="button secondary">
-                View details
-              </a>
-            )}
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Podcasts Section -->
-  <section class="section podcasts-section">
-    <div class="container">
-      <h2>Podcast Appearances</h2>
-      <div class="podcasts-list">
-        {podcasts.map((podcast) => (
-          <a href={podcast.link} target="_blank" rel="noreferrer" class="podcast-card">
-            <div class="podcast-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
-            </div>
-            <div class="podcast-info">
-              <span class="podcast-show">{podcast.show}</span>
-              <h3>{podcast.title}</h3>
-              <p class="podcast-meta">
-                With {podcast.hosts} • {podcast.date} • {podcast.duration}
-              </p>
-              <p class="muted">{podcast.description}</p>
-            </div>
-            <div class="podcast-play">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-          </a>
         ))}
       </div>
     </div>
@@ -316,8 +218,8 @@ const podcasts = [
     <div class="container cta-content">
       <h2>Invite Gayathri to Speak</h2>
       <p class="muted">
-        Available for keynotes, conference sessions, corporate workshops, and podcast appearances.
-        Let's discuss how to bring actionable insights to your audience.
+        I'm available for keynotes, conference sessions, corporate workshops and podcast appearances.
+        Please get in touch for availability.
       </p>
       <div class="cta-row">
         <a class="button primary" href={withBase("/contact")}>Get in Touch</a>
@@ -332,6 +234,11 @@ const podcasts = [
     background: linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, hsl(var(--primary) / 0.1) 100%);
     padding: 1.5rem 0;
     border-bottom: 1px solid hsl(var(--border));
+    margin-top: -3rem;
+  }
+
+  .upcoming-banner + .section {
+    padding-top: 2rem;
   }
 
   .banner-link {
@@ -402,56 +309,7 @@ const podcasts = [
     text-decoration: underline;
   }
 
-  /* Hero */
-  .hero-description {
-    max-width: 55ch;
-    color: hsl(var(--muted-foreground));
-    font-size: 1.1rem;
-  }
-
-  /* Conferences Section */
-  .conferences-section {
-    padding: 1.5rem 0;
-    border-top: none;
-  }
-
-  .conferences-label {
-    text-align: center;
-    font-size: 0.85rem;
-    color: hsl(var(--muted-foreground));
-    margin: 0 0 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .conferences-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem 2rem;
-  }
-
-  .conference-name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: hsl(var(--foreground) / 0.7);
-  }
-
-  /* Featured Video */
-  .featured-video-container {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 2rem;
-    align-items: start;
-    margin-top: 1.5rem;
-  }
-
-  @media (max-width: 800px) {
-    .featured-video-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
+  /* Video Wrapper */
   .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
@@ -468,16 +326,6 @@ const podcasts = [
     width: 100%;
     height: 100%;
     border: none;
-  }
-
-  .featured-video-info {
-    padding-top: 0.5rem;
-  }
-
-  .featured-video-info h3 {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    margin: 0.5rem 0 1rem;
   }
 
   .details-link {
@@ -534,56 +382,43 @@ const podcasts = [
     font-size: 0.9rem;
   }
 
-  /* Other Talks */
-  .talks-list {
+  /* Talk Cards (non-video) */
+  .talk-card {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .talk-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.25rem 1.5rem;
-    border-radius: 16px;
+    padding: 1.5rem;
+    border-radius: 12px;
     border: 1px solid hsl(var(--border));
     background: hsl(var(--card));
   }
 
-  @media (max-width: 600px) {
-    .talk-item {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-  }
-
   .talk-type-badge {
+    display: inline-flex;
+    align-self: flex-start;
     background: hsl(var(--secondary));
     color: hsl(var(--primary));
     padding: 0.35rem 0.75rem;
     border-radius: 4px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    white-space: nowrap;
+    margin-bottom: 1rem;
   }
 
-  .talk-info {
-    flex: 1;
+  .talk-card-info {
+    display: flex;
+    flex-direction: column;
   }
 
-  .talk-info h3 {
+  .talk-card-info h3 {
     font-size: 1.1rem;
-    margin: 0 0 0.25rem;
+    margin: 0.35rem 0 0.5rem;
+    line-height: 1.4;
   }
 
-  .talk-meta {
+  .talk-card .details-link {
+    margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: hsl(var(--muted-foreground));
-    margin: 0;
   }
 
   /* Topics Section */
@@ -745,6 +580,7 @@ const podcasts = [
   /* CTA Section */
   .cta-section {
     background: hsl(var(--secondary));
+    margin-bottom: -3rem;
   }
 
   .cta-content {

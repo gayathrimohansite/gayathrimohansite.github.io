@@ -7,11 +7,14 @@ import { withBase } from "../lib/base";
 
   <!-- Hero Section -->
   <section class="container hero">
-    <p class="eyebrow">Training & Workshops</p>
-    <h1>Hands-on Quality Engineering trainings and workshops</h1>
-    <p class="hero-description">
-      For online virtual courses and in person corporate workshops, please reach out to me at <a href={withBase("/contact")}>Contact</a>.
-    </p>
+    <p class="eyebrow">Trainings & Workshops</p>
+    <h1>Hands on trainings and workshops</h1>
+    <div class="hero-inline">
+      <p class="hero-description">
+        For online courses and in-person corporate workshops
+      </p>
+      <a class="button primary small" href={withBase("/contact")}>Contact Me</a>
+    </div>
   </section>
 
   <!-- Featured O'Reilly Training -->
@@ -74,43 +77,37 @@ import { withBase } from "../lib/base";
         <div class="topic-item">
           <span class="topic-number">01</span>
           <div>
-            <h4>AI-Assisted Test Generation</h4>
-            <p>Generate test cases, test data, and automation scripts using LLMs</p>
+            <h4>AI-assisted test case generation</h4>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-number">02</span>
           <div>
-            <h4>Prompt Engineering for Testers</h4>
-            <p>Craft effective prompts to get reliable, actionable testing outputs</p>
+            <h4>AI-driven Test Automation</h4>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-number">03</span>
           <div>
-            <h4>AI-Enhanced Exploratory Testing</h4>
-            <p>Use AI tools to augment your exploratory testing sessions</p>
+            <h4>AI-powered test data generation</h4>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-number">04</span>
           <div>
-            <h4>Automation Integration</h4>
-            <p>Integrate GenAI into existing test automation frameworks</p>
+            <h4>AI-assisted test reporting</h4>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-number">05</span>
           <div>
-            <h4>Quality Strategy with AI</h4>
-            <p>Build comprehensive quality strategies that leverage AI capabilities</p>
+            <h4>AI powered accessibility, visual and security testing</h4>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-number">06</span>
           <div>
-            <h4>Evaluating AI Testing Tools</h4>
-            <p>Assess and select the right AI tools for your testing needs</p>
+            <h4>AI in testing trends & cautions</h4>
           </div>
         </div>
       </div>
@@ -147,24 +144,6 @@ import { withBase } from "../lib/base";
               <p>Strategic sessions for leadership on AI adoption, quality transformation, and ROI.</p>
             </div>
           </div>
-          <div class="option-card">
-            <div class="option-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <div>
-              <h4>Certification Programs</h4>
-              <p>Multi-day programs with assessments for comprehensive skill development.</p>
-            </div>
-          </div>
-          <div class="option-card">
-            <div class="option-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            </div>
-            <div>
-              <h4>Coaching & Mentoring</h4>
-              <p>Ongoing support for testing leaders and teams through transformation journeys.</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -182,15 +161,15 @@ import { withBase } from "../lib/base";
         </div>
         <div class="training-topic-card">
           <h4>Full Stack Testing Fundamentals</h4>
-          <p>Comprehensive testing strategies from unit to end-to-end, based on the O'Reilly book.</p>
+          <p>Comprehensive testing strategies for functional and non-functional testing based on the book.</p>
         </div>
         <div class="training-topic-card">
-          <h4>Test Automation Architecture</h4>
-          <p>Building scalable, maintainable automation frameworks for enterprise systems.</p>
+          <h4>Enterprise Testing Architecture</h4>
+          <p>Building blocks for enterprise testing strategy covering beyond just manual and automated testing.</p>
         </div>
         <div class="training-topic-card">
-          <h4>Performance & Load Testing</h4>
-          <p>Designing and executing performance tests, analyzing results, and optimization.</p>
+          <h4>Continuous Testing of Non-functional Requirements</h4>
+          <p>Learn to conduct performance, accessibility, visual, data and other NFR testing.</p>
         </div>
         <div class="training-topic-card">
           <h4>Security Testing Essentials</h4>
@@ -224,10 +203,22 @@ import { withBase } from "../lib/base";
 
 <style>
   /* Hero */
+  .hero-inline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
   .hero-description {
-    max-width: 55ch;
     color: hsl(var(--muted-foreground));
     font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .button.small {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
   }
 
   /* Featured Section */

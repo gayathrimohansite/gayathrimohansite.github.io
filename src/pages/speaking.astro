@@ -34,6 +34,24 @@ const talksWithVideos = [
   }
 ];
 
+// Speaking engagements without videos
+const otherTalks = [
+  {
+    title: "Evolutionary Testing Strategy",
+    event: "Test Istanbul 2023",
+    date: "October 5, 2023",
+    type: "Keynote",
+    detailsUrl: "https://testistanbul.org/gayathri-mohan-2023/"
+  },
+  {
+    title: "Why Full-Stack Testing Matters",
+    event: "Thoughtworks Technology Podcast",
+    date: "October 2022",
+    type: "Podcast",
+    detailsUrl: "https://www.thoughtworks.com/en-sg/insights/podcasts/technology-podcasts/why-full-stack-testing-matters"
+  }
+];
+
 // Notable conferences spoken at
 const conferences = [
   "Øredev",
@@ -135,6 +153,21 @@ const podcasts = [
               ></iframe>
             </div>
             <div class="video-card-info">
+              <span class="video-event">{talk.event}</span>
+              <h3>{talk.title}</h3>
+              <span class="video-date">{talk.date}</span>
+              {talk.detailsUrl && (
+                <a href={talk.detailsUrl} target="_blank" rel="noreferrer" class="details-link">
+                  Details →
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+        {otherTalks.map((talk) => (
+          <div class="talk-card">
+            <div class="talk-type-badge">{talk.type}</div>
+            <div class="talk-card-info">
               <span class="video-event">{talk.event}</span>
               <h3>{talk.title}</h3>
               <span class="video-date">{talk.date}</span>
@@ -413,6 +446,45 @@ const podcasts = [
   }
 
   .video-card .details-link {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Talk Cards (non-video) */
+  .talk-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+  }
+
+  .talk-type-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .talk-card-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .talk-card-info h3 {
+    font-size: 1.1rem;
+    margin: 0.35rem 0 0.5rem;
+    line-height: 1.4;
+  }
+
+  .talk-card .details-link {
     margin-top: 0.5rem;
     font-size: 0.9rem;
   }

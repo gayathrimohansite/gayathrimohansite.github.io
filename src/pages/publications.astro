@@ -1,0 +1,665 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/base";
+
+// Books
+const books = {
+  secondEdition: {
+    title: "Full Stack Testing",
+    subtitle: "A Practical Guide for Delivering High Quality Software in the Age of AI",
+    edition: "2nd Edition",
+    status: "Early Access",
+    publisher: "O'Reilly Media",
+    year: "2026",
+    description: "Fully updated with comprehensive AI coverage, 40+ testing tools, and practical hands-on examples for modern software teams.",
+    link: "https://www.oreilly.com/library/view/full-stack-testing/9798341636934/"
+  },
+  firstEdition: {
+    title: "Full Stack Testing",
+    edition: "1st Edition",
+    publisher: "O'Reilly Media",
+    year: "2022",
+    description: "The original comprehensive guide that has helped thousands of practitioners build full stack testing capabilities.",
+    links: {
+      oreilly: "https://www.oreilly.com/library/view/full-stack-testing/9781098108120/",
+      amazon: "https://amzn.eu/d/1tPHt1b"
+    }
+  }
+};
+
+// Featured article
+const featuredArticle = {
+  title: "Agile Threat Modelling",
+  description: "A comprehensive guide to integrating threat modeling into agile development. Learn the STRIDE framework and practical techniques for conducting security analysis as a team sport.",
+  publication: "martinfowler.com",
+  coAuthor: "Jim Gumbley",
+  date: "May 2025",
+  link: "https://martinfowler.com/articles/agile-threat-modelling.html"
+};
+
+// Articles
+const articles = [
+  {
+    title: "Evolutionary Testing Strategy",
+    description: "How testing strategies should evolve alongside business requirements and software architecture, with concrete adoption steps.",
+    publication: "Thoughtworks",
+    coAuthor: "Jonathan Deeming",
+    date: "September 2023",
+    link: "https://www.thoughtworks.com/en-br/insights/articles/evolutionary-testing-strategy"
+  },
+  {
+    title: "Seven Guiding Principles in Testing",
+    description: "Foundational testing principles that remain relevant across technology domains, from end-user focus to defect prevention.",
+    publication: "Thoughtworks",
+    date: "July 2021",
+    link: "https://www.thoughtworks.com/en-es/insights/blog/testing/seven-guiding-principles-testing"
+  },
+  {
+    title: "QA as a Catalyst for Quality-First Software",
+    description: "How QA professionals can transform from gatekeepers to quality advocates, enabling teams to build quality in from the start.",
+    publication: "Thoughtworks",
+    date: "2022",
+    link: "https://www.thoughtworks.com/en-br/insights/blog/testing/qa-catalyst-quality-first-software"
+  },
+  {
+    title: "The IoT Testing Atlas",
+    description: "A framework for testing Internet of Things products, visualizing system parameters to derive meaningful test scenarios across complex state combinations.",
+    publication: "Thoughtworks",
+    date: "April 2017",
+    link: "https://www.thoughtworks.com/en-gb/insights/blog/iot-testing-atlas"
+  },
+  {
+    title: "Continuous Delivery for Mobile Applications",
+    description: "A practical guide to implementing continuous delivery practices for mobile app development, covering testing strategies and automation pipelines.",
+    publication: "Thoughtworks",
+    link: "https://info.thoughtworks.com/rs/thoughtworks2/images/ebook-agile-software-testing.pdf"
+  }
+];
+
+// Testimonials
+const testimonials = [
+  {
+    quote: "Like the proverbial blindfolded team members trying to individually feel their way to understanding an elephant, Gayathri's book provides the necessary perspective for teams to understand a holistic view of testing. While individual testing yields positive results, understanding the full stack enables better whole-project outcomes.",
+    name: "Neal Ford",
+    title: "Director/Software Architect at Thoughtworks, author of Software Architecture: The Hard Parts"
+  },
+  {
+    quote: "From manual exploratory testing to creating test strategies across various quality dimensions and working with emerging technologies, this book covers a lot of ground for beginner as well as experienced quality analysts. Gayathri has done a phenomenal job of distilling just enough theory to introduce the topic and follow it with practical examples so you can apply them in your projects with existing tools and frameworks.",
+    name: "Bharani Subramaniam",
+    title: "Head of Technology, Thoughtworks India"
+  },
+  {
+    quote: "An expansive survey of testing strategies and patterns that covers its subject in both breadth and depth. The theoretical underpinnings of various forms of testing are backed by practical, hands-on examples in several chapters. Gayathri's book should find its way to the desktops of people who write (and, therefore, are bound to test) software.",
+    name: "Saleem Siddiqui",
+    title: "Author of Learning Test-Driven Development"
+  },
+  {
+    quote: "The term full stack development refers to additional skills a developer should have to carry out their job. Full stack testing pertains to the software being tested, and it encompasses all technologies, processes, people skills, and various types of testing that are to be performed to make software better. Full Stack Testing by Gayathri Mohan insightfully covers these multifaceted topics, empowering readers to deliver high-quality software.",
+    name: "Srinivasan Desikan",
+    title: "Adjunct Professor, author of Software Testing: Principles and Practices"
+  },
+  {
+    quote: "This book provides a bird's-eye view of full stack testing and will help you learn about testing and enhance corporate processes related to software testing. I would recommend the book to quality assurance engineers, technical project managers, and software architects. The book gives a railway map of different paths and approaches that can be applied and investigated depending on the application scope, budget, and time frames.",
+    name: "Nigar Akif Movsumova",
+    title: "Software Engineer at EPAM Systems"
+  },
+  {
+    quote: "This is the first attempt I have seen to bring all the various software testing disciplines together in a single publication… this is a book I would gladly add to my IT reference library.",
+    name: "Ian Molyneaux",
+    title: "Author of O'Reilly's The Art of Application Performance Testing"
+  }
+];
+---
+
+<BaseLayout title="Publications" description="Books, articles, and publications by Gayathri Mohan on software testing, quality engineering, and AI-driven development.">
+
+  <!-- Hero Section -->
+  <section class="container hero">
+    <p class="eyebrow">Publications</p>
+    <h1>Books, articles, and frameworks for quality engineering</h1>
+    <p class="hero-description">
+      Practical guidance on AI-enabled quality, enterprise testing strategy, and
+      continuous delivery through books and industry publications.
+    </p>
+  </section>
+
+  <!-- Book Hero Section -->
+  <section class="book-hero-section">
+    <div class="container book-hero-grid">
+      <div class="book-info">
+        <p class="eyebrow">{books.secondEdition.edition} — {books.secondEdition.status}</p>
+        <h2 class="book-title">{books.secondEdition.title}</h2>
+        <p class="book-subtitle">{books.secondEdition.subtitle}</p>
+        <p class="book-description">
+          As AI continues to speed up software delivery, the need for comprehensive quality assurance has never been greater. Full Stack Testing is your essential guide to high-quality software testing across every layer of modern web and mobile applications. This updated second edition covers mobile, web, data, security, performance, accessibility, and other testing types and presents concrete strategies, tool selection criteria, and automation techniques proven to scale. Packed with actionable insights and exercises on over 40 testing tools, it prepares readers to build high-quality software immediately in fast-paced, high-stakes environments.
+        </p>
+        <ul class="book-highlights">
+          <li>Implement effective testing strategies and test automation across web, mobile, and backend systems</li>
+          <li>Address essential nonfunctional requirements testing such as performance, security, and accessibility, among many others</li>
+          <li>Incorporate AI testing tools for both functional and nonfunctional testing and automation</li>
+          <li>Integrate testing in CI/CD workflows for faster, safer releases</li>
+          <li>Expand your career potential by building a well-rounded testing skill set</li>
+        </ul>
+        <div class="book-meta">
+          <span class="meta-item">500 pages</span>
+          <span class="meta-divider">•</span>
+          <span class="meta-item">40+ tools</span>
+          <span class="meta-divider">•</span>
+          <span class="meta-item">{books.secondEdition.publisher}</span>
+        </div>
+        <div class="cta-row">
+          <a
+            class="button primary"
+            href={books.secondEdition.link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Get Early Access
+          </a>
+        </div>
+      </div>
+      <div class="book-hero-media">
+        <div class="book-cover-wrapper">
+          <img src={withBase("/images/full-stack-testing-cover.svg")} alt="Full Stack Testing book cover" />
+          <span class="edition-badge">{books.secondEdition.edition}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who This Book Is For -->
+  <section class="section">
+    <div class="container">
+      <h2>Who This Book Is For</h2>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Testing Beginners</h3>
+          <p>New to software testing and looking to build a solid foundation across all testing disciplines.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Developers & DevOps</h3>
+          <p>Application developers or DevOps engineers whose responsibilities overlap with testing.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          </div>
+          <h3>Engineering and Testing Leaders</h3>
+          <p>Team leaders looking to adopt AI for functional and non-functional testing and automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1st Edition Section -->
+  <section class="section edition-section">
+    <div class="container">
+      <div class="edition-header">
+        <div>
+          <p class="eyebrow">{books.firstEdition.edition} — Available Now</p>
+          <h2>A Comprehensive one-stop guide</h2>
+          <p class="muted">
+            The first edition has helped thousands of practitioners build full stack testing capabilities.
+            Translated into 7 languages. Available now on O'Reilly and Amazon.
+          </p>
+          <div class="cta-row">
+            <a
+              class="button primary"
+              href={books.firstEdition.links.oreilly}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on O'Reilly
+            </a>
+            <a
+              class="button secondary"
+              href={books.firstEdition.links.amazon}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy on Amazon
+            </a>
+            <a
+              class="button secondary"
+              href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/books/bk_full_stack_testing_free_capter_en.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read 1st Chapter
+            </a>
+          </div>
+        </div>
+        <div class="edition-cover">
+          <img src={withBase("/images/full-stack-testing-translations.jpg")} alt="Full Stack Testing book translated into multiple languages" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <h2>Praise for Full Stack Testing</h2>
+      <p class="muted section-subtitle">What industry leaders are saying about the book</p>
+      <div class="testimonials-grid">
+        {testimonials.map((testimonial) => (
+          <blockquote class="testimonial-card">
+            <p class="testimonial-quote">"{testimonial.quote}"</p>
+            <footer class="testimonial-footer">
+              <cite class="testimonial-name">{testimonial.name}</cite>
+              <span class="testimonial-title">{testimonial.title}</span>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Article -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="featured-article">
+        <div class="featured-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Featured on martinfowler.com
+        </div>
+        <h2>{featuredArticle.title}</h2>
+        <p class="featured-meta">
+          Co-authored with {featuredArticle.coAuthor} • {featuredArticle.date}
+        </p>
+        <p class="featured-description">{featuredArticle.description}</p>
+        <a class="button primary" href={featuredArticle.link} target="_blank" rel="noreferrer">
+          Read on martinfowler.com →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Articles & Publications</h2>
+      <div class="articles-grid">
+        {articles.map((article) => (
+          <article class="article-card">
+            <div class="article-publication">{article.publication}</div>
+            <h3>{article.title}</h3>
+            <p class="article-meta">
+              {article.coAuthor ? `Co-authored with ${article.coAuthor} • ` : ""}{article.date}
+            </p>
+            <p class="muted">{article.description}</p>
+            <a href={article.link} target="_blank" rel="noreferrer" class="article-link">
+              Read article →
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-description {
+    max-width: 55ch;
+    color: hsl(var(--muted-foreground));
+    font-size: 1.1rem;
+  }
+
+  /* Book Hero Section */
+  .book-hero-section {
+    background: hsl(var(--secondary) / 0.3);
+    padding: 3rem 0;
+  }
+
+  .book-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .book-info {
+    max-width: 640px;
+  }
+
+  .book-description {
+    color: hsl(var(--muted-foreground));
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+
+  .book-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5rem;
+  }
+
+  .book-highlights li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: hsl(var(--foreground));
+    line-height: 1.5;
+  }
+
+  .book-highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: hsl(var(--primary));
+    border-radius: 50%;
+  }
+
+  .book-hero-media {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .book-hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .book-info {
+      max-width: none;
+    }
+
+    .book-hero-media {
+      order: -1;
+    }
+
+    .book-hero-grid .cta-row {
+      justify-content: center;
+    }
+
+    .book-meta {
+      justify-content: center;
+    }
+  }
+
+  .book-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin: 0.5rem 0 0.25rem;
+  }
+
+  .book-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: hsl(var(--foreground));
+    margin: -0.5rem 0 1rem;
+  }
+
+  .book-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .meta-item {
+    font-weight: 500;
+  }
+
+  .meta-divider {
+    opacity: 0.5;
+  }
+
+  /* Book Cover with Badge */
+  .book-cover-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .book-cover-wrapper img {
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 24px 48px -16px hsl(var(--foreground) / 0.25);
+  }
+
+  .edition-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.4);
+  }
+
+  /* Audience Grid */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .audience-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+  }
+
+  .audience-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .audience-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .audience-card p {
+    margin: 0;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.95rem;
+  }
+
+  /* Edition Section */
+  .edition-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .edition-cover img {
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 16px 32px -16px hsl(var(--foreground) / 0.2);
+  }
+
+  @media (max-width: 640px) {
+    .edition-header {
+      grid-template-columns: 1fr;
+    }
+
+    .edition-cover {
+      order: -1;
+      text-align: center;
+    }
+
+    .edition-cover img {
+      width: 280px;
+    }
+  }
+
+  /* Testimonials */
+  .testimonials-section {
+    background: hsl(var(--secondary) / 0.3);
+  }
+
+  .section-subtitle {
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    margin: 0;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-quote {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground));
+    margin: 0 0 1rem;
+  }
+
+  .testimonial-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid hsl(var(--border));
+  }
+
+  .testimonial-name {
+    font-style: normal;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+  }
+
+  .testimonial-title {
+    font-size: 0.85rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Featured Article */
+  .featured-section {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, hsl(var(--primary) / 0.1) 100%);
+  }
+
+  .featured-article {
+    max-width: 700px;
+  }
+
+  .featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .featured-article h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .featured-meta {
+    font-size: 0.95rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0 0 1rem;
+  }
+
+  .featured-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+  }
+
+  /* Articles Grid */
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .article-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-publication {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .article-card h3 {
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+  }
+
+  .article-meta {
+    font-size: 0.85rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0 0 0.75rem;
+  }
+
+  .article-card .muted {
+    flex: 1;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .article-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: hsl(var(--primary));
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .article-link:hover {
+    text-decoration: underline;
+  }
+</style>

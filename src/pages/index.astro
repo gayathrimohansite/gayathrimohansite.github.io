@@ -114,6 +114,13 @@ import { withBase } from "../lib/base";
       </div>
     </div>
   </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container cta-content">
+      <a class="button primary" href={withBase("/contact")}>Get in Touch</a>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
@@ -290,5 +297,14 @@ import { withBase } from "../lib/base";
 
   .thought-card strong {
     color: hsl(var(--foreground));
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: hsl(var(--secondary));
+  }
+
+  .cta-content {
+    text-align: center;
   }
 </style>

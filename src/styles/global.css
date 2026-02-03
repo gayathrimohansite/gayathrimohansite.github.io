@@ -101,7 +101,8 @@ a:focus {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .page-content {

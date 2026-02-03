@@ -93,15 +93,17 @@ a:focus {
 
 .logo {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  font-style: italic;
 }
 
 .site-nav {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .page-content {

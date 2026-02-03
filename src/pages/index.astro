@@ -115,6 +115,30 @@ import { withBase } from "../lib/base";
     </div>
   </section>
 
+  <!-- Professional Experience -->
+  <section class="section professional-experience-section">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      <div class="experience-content">
+        <div class="experience-category">
+          <h3>Enterprise Transformation & Strategy</h3>
+          <ul class="experience-list">
+            <li>Defined and executed an enterprise-wide Quality Engineering strategy for a globally distributed organization of 800+ IT professionals, supporting a large-scale modernization program. Achieved a 30% reduction in maintenance effort and an 80% reduction in production defects, significantly improving delivery stability and operational efficiency.</li>
+            <li>Led a multi-country mainframe modernization program with a 100+ member global delivery team, embedding a shift-left Quality Engineering model across the SDLC. Enabled a 50% reduction in time-to-market, accelerating business responsiveness and digital transformation outcomes.</li>
+            <li>Co-created Thoughtworks' Global AI Strategy as part of the Global AI Leadership Team, in partnership with the Chief AI Officer. Owned and delivered a strategic OKR to drive AI-assisted software delivery adoption across the top 25 strategic clients within six months, translating AI vision into measurable enterprise adoption.</li>
+          </ul>
+        </div>
+        <div class="experience-category">
+          <h3>Global Capability & Organization Building</h3>
+          <ul class="experience-list">
+            <li>Established and scaled the Global Quality Engineering function at Thoughtworks as the Global QA SME, defining firm-wide standards for QE practices, talent development, and capability maturity. Designed a global career and competency architecture that standardized grade progression, learning pathways, and hiring practices across regions.</li>
+            <li>Directed a 200+ member engineering organization as Engineering Director, executing a strategic mandate to build the company's AI/ML Center of Excellence. Delivered impact through large-scale client engagements, executive sales enablement, internal community leadership, and external thought leadership—including open-source initiatives, industry events, publications, and innovation hackathons.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="section cta-section">
     <div class="container cta-content">
@@ -297,6 +321,49 @@ import { withBase } from "../lib/base";
 
   .thought-card strong {
     color: hsl(var(--foreground));
+  }
+
+  /* Professional Experience */
+  .professional-experience-section {
+    background: hsl(var(--background));
+  }
+
+  .experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .experience-category h3 {
+    font-size: 1.35rem;
+    color: hsl(var(--primary));
+    margin-bottom: 1rem;
+  }
+
+  .experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .experience-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .experience-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: hsl(var(--primary));
+    font-weight: 600;
   }
 
   /* CTA Section */

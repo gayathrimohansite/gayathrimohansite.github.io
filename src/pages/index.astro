@@ -332,16 +332,29 @@ import { withBase } from "../lib/base";
   }
 
   .experience-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
   }
 
+  .experience-category {
+    padding: 1.75rem;
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .experience-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px hsl(var(--foreground) / 0.1);
+  }
+
   .experience-category h3 {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
     color: hsl(var(--primary));
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
   }
 
   .experience-list {
@@ -356,7 +369,7 @@ import { withBase } from "../lib/base";
   .experience-list li {
     position: relative;
     padding-left: 1.75rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.7;
     color: hsl(var(--muted-foreground));
   }

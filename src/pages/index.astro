@@ -22,7 +22,7 @@ import { withBase } from "../lib/base";
         </p>
         <div class="cta-row">
           <a class="button primary" href={withBase("/contact")}>Get in touch</a>
-          <a class="button secondary" href={withBase("/about")}>Learn more</a>
+          <a class="button secondary" href={withBase("/speaking")}>View speaking</a>
         </div>
       </div>
       <div class="hero-image">
@@ -55,13 +55,6 @@ import { withBase } from "../lib/base";
         </div>
         <div class="service-card">
           <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          </div>
-          <h3>Writing & Thought Leadership</h3>
-          <p>Author of O'Reilly's Full Stack Testing, sharing frameworks and strategies for modern testing excellence.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
           </div>
           <h3>Speaking & Training</h3>
@@ -71,145 +64,52 @@ import { withBase } from "../lib/base";
     </div>
   </section>
 
-  <!-- Featured Book Section -->
-  <section class="section book-section">
+  <!-- Thought Leadership -->
+  <section class="section thought-leadership-section">
     <div class="container">
-      <div class="book-feature">
-        <div class="book-cover">
-          <div class="book-cover-wrapper">
-            <img src={withBase("/images/full-stack-testing-cover.svg")} alt="Full Stack Testing book cover" />
-            <span class="edition-badge">2nd Edition</span>
+      <h2>Thought Leadership & Industry Impact</h2>
+      <div class="thought-grid">
+        <div class="thought-card">
+          <div class="thought-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
+          <h4>O'Reilly Author</h4>
+          <p><em>Full Stack Testing</em> – translated into multiple languages; currently authoring 2nd edition with AI capabilities</p>
         </div>
-        <div class="book-info">
-          <span class="feature-label">O'Reilly Media</span>
-          <h2>Full Stack Testing</h2>
-          <p class="book-subtitle">A Practical Guide for Delivering High Quality Software in the Age of AI</p>
-          <p class="muted">
-            The definitive guide to modern software testing, fully updated with comprehensive AI coverage.
-            Learn to implement testing strategies across the full stack with 40+ tools and practical, hands-on examples.
-          </p>
-          <blockquote class="book-quote">
-            "This is the first attempt I have seen to bring all the various software testing disciplines
-            together in a single publication… a book I would gladly add to my IT reference library."
-            <cite>— Ian Molyneaux, O'Reilly author</cite>
-          </blockquote>
-          <div class="cta-row">
-            <a class="button primary" href={withBase("/publications")}>Learn about the book</a>
-            <a class="button secondary" href="https://www.oreilly.com/library/view/full-stack-testing/9798341636934/" target="_blank" rel="noreferrer">
-              Get Early Access
-            </a>
+        <div class="thought-card">
+          <div class="thought-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="m9 9.5 2 2 4-4"/></svg>
           </div>
+          <h4>O'Reilly Live Course</h4>
+          <p>Conducted O'Reilly Live Course on Generative AI for Software Testing</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Speaking Highlights -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Speaking</h2>
-        <p class="muted">International conferences and corporate events</p>
-      </div>
-      <div class="speaking-feature">
-        <div class="video-preview">
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/I3YQnBsc874"
-              title="Evolutionary Testing Strategy - Øredev 2023"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+        <div class="thought-card">
+          <div class="thought-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/><path d="m15 5 3 3"/></svg>
           </div>
+          <h4>Published Author</h4>
+          <p>Published on <strong>martinfowler.com</strong> – Threat Modeling Guide for Software Teams</p>
         </div>
-        <div class="speaking-info">
-          <span class="feature-label">Featured Talk</span>
-          <h3>Evolutionary Testing Strategy</h3>
-          <p class="muted">
-            A comprehensive framework for building testing strategies that evolve with your organization's
-            maturity, from startup to enterprise scale.
-          </p>
-          <div class="conferences-inline">
-            <p class="conferences-label">Speaking at</p>
-            <p class="conference-names">Øredev • Selenium Conf • Test Istanbul • JaSST Tokyo • O'Reilly</p>
+        <div class="thought-card">
+          <div class="thought-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
           </div>
-          <div class="cta-row">
-            <a class="button primary" href={withBase("/speaking")}>View all talks</a>
-            <a class="button secondary" href={withBase("/contact")}>Invite to speak</a>
-          </div>
+          <h4>International Speaker</h4>
+          <p>Øredev, SeleniumConf, Test Istanbul, Agile Testing Alliance, Test Tribe, Harness Webinars</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Training Section -->
-  <section class="section training-section">
-    <div class="container">
-      <div class="training-feature">
-        <div class="training-info">
-          <span class="feature-label">O'Reilly Live Training</span>
-          <h2>Generative AI for Software Testing</h2>
-          <p class="muted">
-            A hands-on live training covering practical workflows for integrating AI into your testing practice.
-            Learn to leverage GenAI tools for test automation, exploratory testing, and quality strategy.
-          </p>
-          <ul class="training-highlights">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              Practical AI-assisted test generation
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              Integrating LLMs into testing workflows
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              Building AI-augmented quality strategies
-            </li>
-          </ul>
-          <div class="cta-row">
-            <a class="button primary" href="https://www.oreilly.com/live-events/generative-ai-for-software-testing/0642572016283/" target="_blank" rel="noreferrer">
-              View on O'Reilly
-            </a>
-            <a class="button secondary" href={withBase("/training")}>All training options</a>
+        <div class="thought-card">
+          <div class="thought-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
           </div>
+          <h4>Industry Recognition</h4>
+          <p>Recognized among <strong>100 Women in Tech to Follow and Learn From</strong> by Agile Testing Days</p>
         </div>
-        <div class="training-visual">
-          <div class="oreilly-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="m9 9.5 2 2 4-4"/></svg>
-            <span class="badge-text">Live Training</span>
+        <div class="thought-card">
+          <div class="thought-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Recognition Section -->
-  <section class="section recognition-section">
-    <div class="container">
-      <div class="recognition-grid">
-        <div class="recognition-card">
-          <div class="recognition-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-          </div>
-          <h3>Proven Results</h3>
-          <p>80% reduction in production defects, 50% faster time-to-market, 3x release cycles for enterprise clients</p>
-        </div>
-        <div class="recognition-card">
-          <div class="recognition-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Enterprise Scale</h3>
-          <p>Led QE strategy for 800+ IT professionals and directed 200+ member engineering organizations</p>
-        </div>
-        <div class="recognition-card">
-          <div class="recognition-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          </div>
-          <h3>Industry Recognition</h3>
-          <p>"100 Women in Tech to Follow" by Agile Testing Days • Creator of Evolutionary Testing Strategy</p>
+          <h4>Framework Creator</h4>
+          <p>Creator of <strong>Evolutionary Testing Strategy</strong> and <strong>IoT Testing Atlas</strong> frameworks</p>
         </div>
       </div>
     </div>
@@ -218,14 +118,7 @@ import { withBase } from "../lib/base";
   <!-- CTA Section -->
   <section class="section cta-section">
     <div class="container cta-content">
-      <h2>Let's Work Together</h2>
-      <p class="muted">
-        Whether you're looking for a keynote speaker, corporate training, or strategic consulting on
-        AI-driven quality engineering — I'd love to hear from you.
-      </p>
-      <div class="cta-row">
-        <a class="button primary" href={withBase("/contact")}>Get in Touch</a>
-      </div>
+      <a class="button primary" href={withBase("/contact")}>Get in Touch</a>
     </div>
   </section>
 </BaseLayout>
@@ -358,285 +251,52 @@ import { withBase } from "../lib/base";
     line-height: 1.6;
   }
 
-  /* Book Section */
-  .book-section {
+  /* Thought Leadership */
+  .thought-leadership-section {
     background: hsl(var(--secondary) / 0.5);
   }
 
-  .book-feature {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  @media (max-width: 800px) {
-    .book-feature {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .book-cover {
-      order: -1;
-    }
-
-    .book-info .cta-row {
-      justify-content: center;
-    }
-  }
-
-  .book-cover-wrapper {
-    position: relative;
-    display: inline-block;
-  }
-
-  .book-cover img {
-    width: 240px;
-    border-radius: 12px;
-    box-shadow: 0 24px 48px -16px hsl(var(--foreground) / 0.25);
-  }
-
-  @media (max-width: 800px) {
-    .book-cover img {
-      width: 200px;
-    }
-  }
-
-  .edition-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    box-shadow: 0 4px 12px hsl(var(--primary) / 0.4);
-  }
-
-  .feature-label {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: hsl(var(--primary));
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-  }
-
-  .book-info h2 {
-    margin: 0 0 0.5rem;
-  }
-
-  .book-subtitle {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    font-style: italic;
-    color: hsl(var(--foreground));
-    margin: 0 0 1rem;
-  }
-
-  .book-quote {
-    margin: 1.5rem 0;
-    padding: 1.25rem;
-    background: hsl(var(--background));
-    border-radius: 12px;
-    border-left: 3px solid hsl(var(--primary));
-    font-size: 0.95rem;
-    font-style: italic;
-    line-height: 1.6;
-  }
-
-  .book-quote cite {
-    display: block;
-    margin-top: 0.75rem;
-    font-size: 0.85rem;
-    font-style: normal;
-    color: hsl(var(--muted-foreground));
-  }
-
-  /* Speaking Feature */
-  .speaking-feature {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 2.5rem;
-    align-items: start;
-  }
-
-  @media (max-width: 800px) {
-    .speaking-feature {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .video-preview {
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    background: hsl(var(--secondary));
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  .speaking-info h3 {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    margin: 0.5rem 0 1rem;
-  }
-
-  .conferences-inline {
-    margin: 1.5rem 0;
-    padding: 1rem;
-    background: hsl(var(--secondary));
-    border-radius: 8px;
-  }
-
-  .conferences-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: hsl(var(--muted-foreground));
-    margin: 0 0 0.35rem;
-  }
-
-  .conference-names {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: hsl(var(--foreground));
-    margin: 0;
-  }
-
-  /* Training Section */
-  .training-section {
-    background: hsl(var(--primary) / 0.05);
-  }
-
-  .training-feature {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  @media (max-width: 800px) {
-    .training-feature {
-      grid-template-columns: 1fr;
-    }
-
-    .training-visual {
-      order: -1;
-      justify-self: center;
-    }
-  }
-
-  .training-info h2 {
-    margin: 0 0 1rem;
-  }
-
-  .training-highlights {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-
-  .training-highlights li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 0;
-    color: hsl(var(--foreground));
-    font-size: 0.95rem;
-  }
-
-  .training-highlights svg {
-    color: hsl(var(--primary));
-    flex-shrink: 0;
-  }
-
-  .training-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .oreilly-badge {
-    width: 180px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background: hsl(var(--background));
-    border: 2px solid hsl(var(--primary));
-    border-radius: 50%;
-    color: hsl(var(--primary));
-    box-shadow: 0 16px 32px -8px hsl(var(--primary) / 0.2);
-  }
-
-  .badge-text {
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  /* Recognition Section */
-  .recognition-section {
-    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary) / 0.3) 100%);
-  }
-
-  .recognition-grid {
+  .thought-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
-  .recognition-card {
-    padding: 2rem;
+  .thought-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: hsl(var(--background));
     border-radius: 16px;
     border: 1px solid hsl(var(--border));
-    background: hsl(var(--card));
-    text-align: center;
   }
 
-  .recognition-icon {
-    width: 64px;
-    height: 64px;
+  .thought-icon {
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: hsl(var(--primary) / 0.1);
     color: hsl(var(--primary));
-    border-radius: 16px;
-    margin: 0 auto 1.25rem;
+    border-radius: 12px;
+    flex-shrink: 0;
   }
 
-  .recognition-card h3 {
-    font-size: 1.1rem;
-    margin: 0 0 0.5rem;
+  .thought-card h4 {
+    font-size: 1rem;
+    margin: 0 0 0.35rem;
   }
 
-  .recognition-card p {
-    margin: 0;
-    font-size: 0.95rem;
+  .thought-card p {
+    font-size: 0.9rem;
     color: hsl(var(--muted-foreground));
-    line-height: 1.6;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .thought-card strong {
+    color: hsl(var(--foreground));
   }
 
   /* CTA Section */
@@ -646,15 +306,5 @@ import { withBase } from "../lib/base";
 
   .cta-content {
     text-align: center;
-    max-width: 600px;
-  }
-
-  .cta-content h2 {
-    margin-bottom: 0.75rem;
-  }
-
-  .cta-content .cta-row {
-    justify-content: center;
-    margin-top: 1.5rem;
   }
 </style>

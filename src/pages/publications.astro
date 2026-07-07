@@ -77,6 +77,34 @@ const articles = [
 ];
 
 // Testimonials
+const secondEditionTestimonials = [
+  {
+    quote: "It's surprisingly difficult to find truly comprehensive material on some pretty common software development concerns, including full stack testing. This book fills that gap with a comprehensive, thorough treatment of all aspects of this nuanced set of practices. An indispensable guide for teams wrestling with how best to handle testing.",
+    name: "Neal Ford",
+    title: "Author of Fundamentals of Software Architecture and Software Architecture: The Hard Parts"
+  },
+  {
+    quote: "A comprehensive look at modern testing practices in the AI age, grounded in engineering discipline, continuous delivery, and product complexity, this book brings shift-left thinking and AI-enabled testing together into a coherent, practical playbook for building quality into modern software delivery from day one.",
+    name: "Steve Smith",
+    title: "Technology leader and author of Measuring Continuous Delivery and Build Quality In"
+  },
+  {
+    quote: "If you've ever been told to 'just add AI to your testing' with zero guidance on how, this book is your lifeline. Gayathri Mohan cuts through the hype with hard-won, practical wisdom that actually translates to better software quality. This second edition earns its place on every engineer's shelf by treating AI as what it actually is: a powerful collaborator that still needs adult supervision.",
+    name: "Kshira Saagar",
+    title: "Chief Data and AI Officer, AVIV Group"
+  },
+  {
+    quote: "It's rare to find a book that evolves as fast as the field it covers. Gayathri Mohan delivers something the AI hype machine rarely does: honest, structured, practical guidance on where AI genuinely helps in testing and, critically, where it doesn't.",
+    name: "Kamal Kishore",
+    title: "Chief AI and Technology Officer, Centricity"
+  },
+  {
+    quote: "In an age of AI-generated code, Mohan makes the case that quality is a systems discipline, not a tools problem. The ten-skill framework here, grounded in shift-left principles and refreshingly honest about AI's limits, is the most complete, practical guide to full-stack testing I've encountered. This is the guide I wish every team had.",
+    name: "Ashok Subramanian",
+    title: "Chief Technology Officer, Taylor and Francis"
+  }
+];
+
 const testimonials = [
   {
     quote: "Like the proverbial blindfolded team members trying to individually feel their way to understanding an elephant, Gayathri's book provides the necessary perspective for teams to understand a holistic view of testing. While individual testing yields positive results, understanding the full stack enables better whole-project outcomes.",
@@ -167,6 +195,25 @@ const testimonials = [
     </div>
   </section>
 
+  <!-- 2nd Edition Testimonials -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <h2>Praise for Full Stack Testing, 2nd Edition</h2>
+      <p class="muted section-subtitle">What industry leaders are saying about the new edition</p>
+      <div class="testimonials-grid">
+        {secondEditionTestimonials.map((testimonial) => (
+          <blockquote class="testimonial-card">
+            <p class="testimonial-quote">"{testimonial.quote}"</p>
+            <footer class="testimonial-footer">
+              <cite class="testimonial-name">{testimonial.name}</cite>
+              <span class="testimonial-title">{testimonial.title}</span>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Who This Book Is For -->
   <section class="section">
     <div class="container">
@@ -245,7 +292,7 @@ const testimonials = [
   <!-- Testimonials -->
   <section class="section testimonials-section">
     <div class="container">
-      <h2>Praise for Full Stack Testing</h2>
+      <h2>Praise for Full Stack Testing, 1st Edition</h2>
       <p class="muted section-subtitle">What industry leaders are saying about the book</p>
       <div class="testimonials-grid">
         {testimonials.map((testimonial) => (
